@@ -1,0 +1,35 @@
+<%= form_with url: "/cars/#{params[:car_id]}/car_compares", method: :post do |form| %>
+  
+
+  <div class="my-5">
+    <%= form.label :days %>
+    <%= form.text_field :days, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :price %>
+    <%= form.text_field :price, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :Mileage %>
+    <%= form.text_field :Mileage, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :car_id %>
+    <%= form.text_field :car_id, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full", value: params[:car_id], disabled: true %>
+  </div>
+<!-- 
+  <div class="my-5">
+    <%= form.label :image %>
+    <%= form.file_field :image, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full",required: true %>
+  </div> -->
+
+  
+
+  <div class="inline">
+    <%= form.submit class: "rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer" %>
+  </div>
+
+<% end %>

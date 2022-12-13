@@ -1,0 +1,28 @@
+<div id="<%= dom_id car_compare %>">
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Days:</strong>
+    <%= car_compare.days %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Price:</strong>
+    <%= car_compare.price %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Mileage:</strong>
+    <%= car_compare.Mileage %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Car:</strong>
+    <%= car_compare.car_id %>
+  </p>
+
+
+  <% if action_name != "show" %>
+    <%= link_to "Show this car compare", car_car_compares_path(params['car_id']), class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to 'Edit this car compare', edit_car_car_compare_path(params['car_id'],car_compare), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
+    <hr class="mt-6">
+  <% end %>
+</div>

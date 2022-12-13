@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  days: MyString
+  price: MyString
+  Mileage: MyString
+  car: one
+
+two:
+  days: MyString
+  price: MyString
+  Mileage: MyString
+  car: two

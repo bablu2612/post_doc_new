@@ -1,0 +1,317 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+  font-family: 'Poppins', sans-serif;
+}
+    form :where(input, select) {
+        width: 100%;
+        outline: none;
+        display: block;
+        color: #6E7684;
+        font-size: 16px;
+        padding: 0px 20px;
+        border-radius: 4px;
+        background-color: #ffffff; 
+        border: 1px solid #D8D8D8;
+        transition: 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+        height: 50px;
+        box-shadow: 0 5px 5px 0 #0000000d !important;
+    } 
+    .similar_list form,
+    .main-wrapper {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+        width: 100%;
+    }
+    
+    .form-group label {
+        font-weight: 600;
+        font-size: 16px;
+        font-family: poppins;
+    }
+    label[for="car_id"] {
+    display: none;
+} 
+.main-wrapper {
+    margin-bottom: 70px;
+}
+h2 {
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 30px;
+    margin: 20px 0;
+    border-left: 5px solid #2563eb;
+    padding-left: 20px;
+}
+.similar_list, .main-wrapper {
+    padding: 40px;
+    border-radius: 15px;
+    background: url('http://futureshapers.co.in/wp-content/uploads/2022/11/pattern.jpg');
+    background-size: contain;
+    background-position: center;
+    box-shadow: 0px 6px 10px rgb(0 0 0 / 10%);
+    border: 1px solid #f7f7f7;
+}
+.nav-cstm {
+    margin: 40px 0;
+}
+.nav-cstm a{
+    background: #000;color: #fff;
+    text-decoration: none;margin-left: 0;transition: 0.3 ease all;
+}
+.nav-cstm a:hover{
+  background: #2563eb;
+}
+.similar_list form{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 30px;
+    width: 100%;
+    justify-self: stretch;
+}
+.similar_list {
+    display: flex;
+} 
+
+.similar_list form:not(:nth-child(3)) {
+    border-right: 1px solid #ddd;
+    padding-right: 40px;
+    margin-right: 40px;
+}
+
+ 
+</style>
+<%= form_with(model: car, class: "contents",id: "create_form") do |form| %>
+    <% if car.errors.any? %>
+        <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">
+            <h2><%= pluralize(car.errors.count, "error") %> prohibited this car from being saved:</h2>
+            <ul>
+                <% car.errors.each do |error| %>
+                    <li>
+                        <%= error.full_message %>
+                    </li>
+                    <% end %>
+            </ul>
+        </div>
+        <% end %>
+
+            <div class="main-wrapper">
+                <div class="form-group">
+                       <%= form.label :name %>
+                       <span class="text-red-500">*</span>
+                        <%= form.text_field :name, id: "name", class: "block shadow-sm rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full",placeholder: "Enter name" %>
+                </div>
+                <div class="form-group">
+                    <%= form.label :phone %><span class="text-red-500">*</span>
+
+                        <%= form.text_field :phone,id: "phone", class: "block shadow-sm rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full",placeholder: "Enter phone number" %>
+                </div>
+                <div class="form-group">
+                    <%= form.label :year %><span class="text-red-500">*</span>
+                        <%= form.text_field :year,id: "year", class: "block shadow-sm rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full",placeholder: "Enter year" %>
+                </div>
+                <div class="form-group">
+                    <%= form.label :make %><span class="text-red-500">*</span>
+                        <%= form.text_field :make,id: "make", class: "block shadow-sm rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full",placeholder: "Enter make" %>
+                </div>
+                <div class="form-group">
+                    <%= form.label :model %><span class="text-red-500">*</span>
+                        <%= form.text_field :model,id: "model", class: "block shadow-sm rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full",placeholder: "Enter model" %>
+                </div>
+                <div class="form-group">
+                    <%= form.label :body %><span class="text-red-500">*</span>
+                        <%= form.select :body,  ['Sedan', 'Coupe','Convertible','SUV',"Pick-Up","Mini-Van"], class: "block shadow-sm rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full",placeholder: "Enter body",id: "body"%>
+                </div>
+              
+                <div class="form-group">
+                    <%= form.label :vin %><span class="text-red-500">*</span>
+                        <%= form.text_field :vin,id: "vin", class: "block shadow-sm rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" ,placeholder: "Enter vin"%>
+                </div>
+                <div class="form-group">
+                    <%= form.label :miles %><span class="text-red-500">*</span>
+                        <%= form.text_field :miles,id: "miles", class: "block shadow-sm rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full",placeholder: "Enter miles" %>
+                </div>
+                <div class="form-group">
+                    <%= form.label :zipcode %><span class="text-red-500">*</span>
+                        <%= form.text_field :zipcode,id: "zipcode", class: "block shadow-sm rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full",placeholder: "Enter zipcode" %>
+                </div>
+      
+                <div class="form-group">
+                    <%= form.label :ten_day_price ,'10 day price' %><span class="text-red-500">*</span>
+                        <%= form.text_field :ten_day_price,id: "ten_day_price", class: "block shadow-sm rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full",placeholder: "Enter 10 day price" %>
+                </div>
+                <div class="form-group">
+                    <%= form.label :twenty_day_price ,'20 day price' %><span class="text-red-500">*</span>
+                        <%= form.text_field :twenty_day_price,id: "twenty_day_price", class: "block shadow-sm rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" ,placeholder: "Enter 20 day price"%>
+                </div>
+                <div class="form-group">
+                    <%= form.label :thirty_day_price,'30 day price' %><span class="text-red-500">*</span>
+                        <%= form.text_field :thirty_day_price,id: "thirty_day_price", class: "block shadow-sm rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" ,placeholder: "Enter 30 day price" %>
+                </div>
+                <!-- 
+                <div class="inline">
+                <%= form.submit "Create" ,id: "create_form_button",class: "rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer" %>
+            </div> -->
+        <% end %>
+
+
+            </div>
+            <div class="similar_wrap">
+                <h2>similar listing </h2>
+                <div class="similar_list">
+                <%= form_with url: "/cars/#{params[:car_id]}/car_compares",id: "silimar1", method: :post do |form| %>
+                    <div class="form-group">
+                        <%= form.label :days %><span class="text-red-500">*</span>
+                            <%= form.text_field :days,id:"days", class: "block shadow-sm rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full",placeholder: "Enter days" %>
+                    </div>
+                    <div class="form-group">
+                        <%= form.label :price %><span class="text-red-500">*</span>
+                            <%= form.text_field :price,id:"price", class: "block shadow-sm rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full",placeholder: "Enter price" %>
+                    </div>
+                    <div class="form-group">
+                        <%= form.label :Mileage %><span class="text-red-500">*</span>
+                            <%= form.text_field :Mileage,id:"Mileage", class: "block shadow-sm rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full",placeholder: "Enter mileage" %>
+                    </div>
+                    <div class="form-group">
+                                        <%= form.label :url %><span class="text-red-500">*</span>
+                                            <%= form.text_field :url,id:"url" ,class: "block shadow-sm rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full",placeholder: "Enter url" %>
+                                    </div>
+                    <div class="form-group">
+                        <%= form.label :car_id %>
+                            <%= form.hidden_field :car_id, class: "block shadow-sm rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full", value: params[:car_id], disabled: true %>
+                    </div>
+  
+
+                    <% end %>
+                        <%= form_with url: "/cars/#{params[:car_id]}/car_compares",id: "silimar2", method: :post do |form| %>
+                            <div class="form-group"><span class="text-red-500">*</span>
+                                <%= form.label :days %>
+                                    <%= form.text_field :days,id:"days", class: "block shadow-sm rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+                            </div>
+                            <div class="form-group"><span class="text-red-500">*</span>
+                                <%= form.label :price %>
+                                    <%= form.text_field :price,id:"price", class: "block shadow-sm rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+                            </div>
+                            <div class="form-group">
+                                <%= form.label :Mileage %><span class="text-red-500">*</span>
+                                    <%= form.text_field :Mileage,id:"Mileage", class: "block shadow-sm rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+                            </div>
+                            <div class="form-group">
+                            <%= form.label :url %><span class="text-red-500">*</span>
+                                <%= form.text_field :url,id:"url", class: "block shadow-sm rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full",placeholder: "Enter url" %>
+                        </div>
+                            <div class="form-group ">
+                                <%= form.label :car_id %>
+                                    <%= form.hidden_field :car_id, class: "block shadow-sm rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full", value: params[:car_id], disabled: true %>
+                            </div>
+                            <% end %>
+                               
+                                <%= form_with url: "/cars/#{params[:car_id]}/car_compares",id: "silimar3", method: :post do |form| %>
+                                    <div class="form-group">
+                                        <%= form.label :days %><span class="text-red-500">*</span>
+                                            <%= form.text_field :days,id:"days", class: "block shadow-sm rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+                                    </div>
+                                    <div class="form-group">
+                                        <%= form.label :price %><span class="text-red-500">*</span>
+                                            <%= form.text_field :price,id:"price", class: "block shadow-sm rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+                                    </div>
+                                    <div class="form-group">
+                                        <%= form.label :Mileage %><span class="text-red-500">*</span>
+                                            <%= form.text_field :Mileage,id:"Mileage", class: "block shadow-sm rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+                                    </div>
+                                    <div class="form-group">
+                                    <%= form.label :url %><span class="text-red-500">*</span>
+                                        <%= form.text_field :url,id:"url", class: "block shadow-sm rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full",placeholder: "Enter url" %>
+                                </div>
+                                    <div class="form-group hidden_field">
+                                        <%= form.label :car_id %>
+                                            <%= form.hidden_field :car_id, class: "block shadow-sm rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full", value: params[:car_id], disabled: true %>
+                                    </div>
+                                   
+                                    <% end %>
+                               
+                                   </div>  
+                                   <%= form_with url: "/cars",id: "silimar31112",class: "contents", method: :get do |form| %>
+                                   <br />
+                                  <div class="inline">
+                                  <%= form.button "Create" ,id: "create_cars",class: "rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer" %>
+                                 </div>
+                                  <% end %>
+                                   
+                                   <script>
+$(document).ready(function(){
+  $("#create_cars").click(function(e){  
+    console.log('working')
+e.preventDefault();
+    $.ajax({
+        url: "/cars",
+        data: {
+            car: {
+                name: $("#name").val(),
+                phone: $("#phone").val(),
+                model: $("#model").val(),
+                year: $("#year").val(),
+                make: $("#make").val(),
+
+                body: $("#car_body :selected").val(),
+                vin: $("#vin").val(),
+                miles: $("#miles").val(),
+                zipcode: $("#zipcode").val(),
+                ten_day_price: $("#ten_day_price").val(),
+                twenty_day_price: $("#twenty_day_price").val(),
+                thirty_day_price: $("#thirty_day_price").val()
+             }
+        },
+        error: function(error) {
+            console.log("error",error);
+        },
+        success: function(data) {
+            console.log("Data",data);
+            for(let i=1;i<=3;i++){
+                $.ajax({
+                    url: "/cars/"+data.data.id+"/car_compares",
+                    data: {
+                        
+                            days: $("#silimar"+i+" #days").val(),
+                            price: $("#silimar"+i+" #price").val(),
+                            Mileage: $("#silimar"+i +" #Mileage").val(),
+                            car_id: data.data.id ,
+                            url: $("#silimar"+i+" #url").val(),
+        
+                         
+                    },
+                    error: function(error) {
+                        console.log("error12",error);
+                    },
+                    success: function(data) {
+                        if(i==3){
+                            window.location.href = "/cars";
+                        }
+                        console.log("Data121",data);
+                    },
+                    type: 'POST'
+                })
+            }
+           
+        
+
+
+
+
+
+
+
+
+
+
+        },
+        type: 'POST'
+    });
+
+
+  });
+});
+</script>
+
+
