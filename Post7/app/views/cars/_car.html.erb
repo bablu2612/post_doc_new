@@ -49,6 +49,36 @@
     <%= car.askprice %>
   </p>
 
+
+
+
+
+  <p class="my-5">
+  <strong class="block font-medium mb-1">email_inq:</strong>
+  <%= car.email_inq %>
+</p>
+
+
+<p class="my-5">
+<strong class="block font-medium mb-1">phone_inq:</strong>
+<%= car.phone_inq %>
+</p>
+
+
+<p class="my-5">
+<strong class="block font-medium mb-1">listing_save:</strong>
+<%= car.listing_save %>
+</p>
+
+<p class="my-5">
+<strong class="block font-medium mb-1">listing_view:</strong>
+<%= car.listing_view %>
+</p>
+
+
+
+
+
   <% if action_name != "show" %>
     <%= link_to "Show this car", car, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
     <%= link_to 'Edit this car', edit_car_path(car), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>

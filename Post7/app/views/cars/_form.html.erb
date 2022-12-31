@@ -149,6 +149,41 @@ h2 {
                     <%= form.label :thirty_day_price,'30 day price' %><span class="text-red-500">*</span>
                         <%= form.text_field :thirty_day_price,id: "thirty_day_price", class: "block shadow-sm rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" ,placeholder: "Enter 30 day price" %>
                 </div>
+
+
+
+
+
+
+
+
+
+                <div class="form-group">
+                <%= form.label :email_inq,'email enquiries' %><span class="text-red-500">*</span>
+                    <%= form.text_field :email_inq,id: "email_inq", class: "block shadow-sm rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" ,placeholder: "Enter email_inq" %>
+            </div>
+
+
+            <div class="form-group">
+            <%= form.label :phone_inq,'phone enquiries' %><span class="text-red-500">*</span>
+                <%= form.text_field :phone_inq,id: "phone_inq", class: "block shadow-sm rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" ,placeholder: "Enter phone_inq" %>
+        </div>
+
+
+
+        <div class="form-group">
+        <%= form.label :listing_save,'listing save' %><span class="text-red-500">*</span>
+            <%= form.text_field :listing_save,id: "listing_save", class: "block shadow-sm rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" ,placeholder: "Enter listing_save" %>
+    </div>
+
+
+
+    <div class="form-group">
+    <%= form.label :listing_view,'listing view' %><span class="text-red-500">*</span>
+        <%= form.text_field :listing_view,id: "listing_view", class: "block shadow-sm rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" ,placeholder: "Enter listing_view" %>
+</div>
+
+
                 <!-- 
                 <div class="inline">
                 <%= form.submit "Create" ,id: "create_form_button",class: "rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer" %>
@@ -260,7 +295,14 @@ e.preventDefault();
                 zipcode: $("#zipcode").val(),
                 ten_day_price: $("#ten_day_price").val(),
                 twenty_day_price: $("#twenty_day_price").val(),
-                thirty_day_price: $("#thirty_day_price").val()
+                thirty_day_price: $("#thirty_day_price").val(),
+
+                email_inq: $("#email_inq").val(),
+                phone_inq: $("#phone_inq").val(),
+                listing_save: $("#listing_save").val(),
+                listing_view: $("#listing_view").val()
+
+
              }
         },
         error: function(error) {

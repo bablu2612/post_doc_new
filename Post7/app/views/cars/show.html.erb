@@ -480,6 +480,46 @@ a.link_similar.list {
     max-width: calc(100%/2);
 }
  }
+
+
+
+
+
+
+
+
+
+
+ .row.additions {
+    display: flex;
+}
+
+.additions .d-flex {
+    max-width: calc(100%/2);
+    width: 100%;
+    flex: 1;
+}
+
+.number_holder {
+    width: 50px;
+    display: grid;
+    place-items: center;
+}
+.d-flex.content_holder {
+    max-width: calc(100% - 50px);
+}
+
+.additions > .d-flex {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #fff;
+}
+.d-flex.content_holder {
+    max-width: calc(100% - 50px);
+    justify-content: space-between;
+    padding-left: 121px;
+}
 </style>
 
 <div class="container">
@@ -512,6 +552,64 @@ a.link_similar.list {
             </div>
         </section>
 
+
+
+          <section class="section-1-wrap">
+            <div class="container">
+               <div class="row additions">
+
+
+                <div class="d-flex">
+
+                    <div class="number_holder">
+                        <span><%= @car.email_inq %></span>
+                    </div>
+
+                    <div class="d-flex content_holder">
+                    <div>Emails enquires</div>
+                    <div><i class='fa fa-envelope'></i></div>
+                    </div>
+               </div>
+
+               <div class="d-flex">
+
+               <div class="number_holder">
+                   <span><%= @car.listing_save %></span>
+               </div>
+
+               <div class="d-flex content_holder">
+               <div>Listing Saves</div>
+               <div><i class='fa fa-download'></i></div>
+               </div>
+          </div>
+
+          <div class="d-flex">
+
+          <div class="number_holder">
+              <span><%= @car.phone_inq %></span>
+          </div>
+
+          <div class="d-flex content_holder">
+          <div>Phone Inquires</div>
+          <div><i class='fa fa-phone'></i></div>
+          </div>
+     </div>
+
+     <div class="d-flex">
+
+     <div class="number_holder">
+         <span><%= @car.listing_view %></span>
+     </div>
+
+     <div class="d-flex content_holder">
+     <div>Listing Views</div>
+     <div> <i class="fa-solid fa-eye"></i></div>
+     </div>
+</div>
+               
+               </div>
+            </div>
+        </section>
 
         <!-- market information section -->
         <section class="market-information section-4">
