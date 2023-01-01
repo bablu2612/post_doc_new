@@ -71,18 +71,16 @@
  
  .section-1-wrap {
      border-bottom: 2px solid #ddd;
-     padding-top: 40px
+     padding: 40px 0 0;
  }
- 
+ .section-stats{
+    padding: 40px 0;
+ }
  .information ul {
      list-style: none;
      padding: 0;
  }
- 
- .section-1-inner p {
-     margin-bottom: 20px;
- }
- 
+  
  .section-2-wrap {
      border-bottom: 2px solid #ddd;
  }
@@ -284,7 +282,7 @@ section.market-information .row .col-md-6 .top-contentblock>p, .left-img p {
  
  .bottom-block .content-info {
      width: 100%;
-     max-width: calc(100% - 150px);
+     max-width: calc(100% - 130px);
      padding-left: 30px;
  }
  
@@ -369,7 +367,7 @@ section.section-2-wrap .information .information {
     color: #91919b;
 }
 .section-1-inner p {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     font-size: 24px;
     max-width: 1000px;
     line-height: 1.5;
@@ -378,148 +376,218 @@ section.section-2-wrap .information .information {
 a.link_similar.list {
     text-decoration: none;
 }
- @media (max-width: 1024px) {
-     .container.inner-wrapper {
-         max-width: 100%;
-     }
-     .imageblock {
-         max-width: 100px;
-     }
-     .left-img {
-         max-width: calc(100% - 100px);
-     }
- }
+
+
+
+
  
- @media (max-width: 991px) {
-     section.market-information .row {
-         grid-template-columns: repeat(1, 1fr);
-         gap: 20px;
-     }
-     .piechart [class*="col-md"] {
-         width: 100%;
-         max-width: 100%;
-     }
-     .main-car {
-         display: grid;
-         grid-template-columns: repeat(3, 1fr);
-     }
-     .piechart [class*="col-md"] h2 {
-         padding-top: 50px;
-         text-align: center
-     }
- }
- 
- @media (max-width: 767px) {
-     .section-1-inner p {
-         font-size: 12px;
-     }
-     section.market-information .row .col-md-6 .top-contentblock h3,
-     h2,
-     .inner-wrapper h2 {
-         font-size: 20px;
-     }
-     .informations span {
-         font-size: 14px;
-     }
-     .information-blocks>div {
-         max-width: 100%;
-         width: 100%;
-         flex: 100%;
-     }
-     .information-blocks {
-         flex-wrap: wrap;
-     }
-     .piechart [class*="col-md"] h2 {
-         padding-top: 30px;
-     }
-     .main-car {
-         grid-template-columns: repeat(1, 1fr);
-     }
-     .bottom-block .img-block {
-         max-width: 60px;
-         margin: 0 auto;
-     }
-     .left-img {
-         max-width: calc(100% - 60px);
-     }
-     
-    .fees-meinsection {
-         padding: 20px;
-     }
-     .top-contentblock {
-         padding-right: 0;
-     }
-     .bottom-block .content-info {
-         padding-left: 0;
-         max-width: 100%;
-         padding-top: 10px;
-     }
-     .information ul.row li,.left-img p,section.market-information .row .col-md-6 .top-contentblock>p {
-         font-size: 16px;
-         line-height: normal;
-     }
-     section.market-information .row .col-md-6 .top-contentblock>p strong {
-         width: 100%;
-     }
-     .imageblock {
-         max-width: 60px;
-     }
-     section.market-information .row .col-md-6 {
-         padding: 20px;
-     }
-     .right-content.text-right {
-         padding-top: 20px;
-     }
-     .information ul.row li {
-         padding-bottom: 5px; 
-     }
-     .information .information {
-    padding: 10px 0px;
-}
-.information ul.row li {
-    max-width: calc(100%/2);
-}
- }
-
-
-
-
-
-
-
-
-
-
- .row.additions {
-    display: flex;
-}
-
-.additions .d-flex {
-    max-width: calc(100%/2);
+.d-flex.content_holder {
+    max-width: calc(100% - 90px);
+    justify-content: space-between;
+    padding: 0 20px 0 0;
+    align-items: center;
     width: 100%;
-    flex: 1;
 }
 
+ 
+ 
+.additions > .d-flex {
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    gap: 20px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px 2px rgb(0 0 0 / 5%);
+    width: 100%;
+    flex: 100%;
+    max-width: calc(100%/2 - 20px);
+    justify-content: space-between;
+    padding: 0;
+}
+ 
 .number_holder {
-    width: 50px;
+    background: #eaf2fb;
+    height: 100%;
+    min-height: 60px;
     display: grid;
+    width: 90px;
     place-items: center;
 }
-.d-flex.content_holder {
-    max-width: calc(100% - 50px);
+  
+ 
+.content_holder i {
+    color: #7d8497;
+}
+ 
+.row.additions {
+    flex-wrap: wrap;
+    gap: 30px;
+    width: 100%;
+    justify-content: center;
+    margin: 0;
+}
+.heading-holder h2 i {
+    color: #406ae8;
+    margin-left: 5px;
+}
+.heading-holder p {
+    font-size: 24px;
+    margin: 20px 0 40px;
+    line-height: normal;
+}
+.bottom-text span {
+    font-weight: 600;
 }
 
-.additions > .d-flex {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    border: 1px solid #fff;
-}
-.d-flex.content_holder {
-    max-width: calc(100% - 50px);
+.bottom-text {
+    background: #fecea9;
+    padding: 10px 60px 10px 20px;
+    border-radius: 5px;
+    margin-top: 30px;
+    display: flex;
     justify-content: space-between;
-    padding-left: 121px;
 }
+ /* Media Query Start */
+@media (max-width: 1024px) {
+    .container.inner-wrapper {
+        max-width: 100%;
+    }
+    .imageblock {
+        max-width: 100px;
+    }
+    .left-img {
+        max-width: calc(100% - 100px);
+    }
+    .informations p {
+    margin: 0;
+    font-size: 18px;
+}
+}
+
+@media (max-width: 991px) {
+   .section-stats {
+   padding: 40px 0 0;
+}
+    section.market-information .row {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 20px;
+    }
+    .piechart [class*="col-md"] {
+        width: 100%;
+        max-width: 100%;
+    }
+    .main-car {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .piechart [class*="col-md"] h2 {
+        padding-top: 50px;
+        text-align: center
+    }
+    .piechart [class*="col-md"]:last-child {
+    padding-left: 15px;
+}
+section.fees-meinsection .inner-wrapper [class*="col-md"] {
+    width: 100%;
+    max-width: 100%;
+    flex: 100%;
+}
+}
+
+@media (max-width: 767px) {
+    .content-block p {
+    font-size: 18px; 
+}
+    .section-1-inner p,.heading-holder p {
+        font-size: 14px;
+    }
+    .additions > .d-flex{
+        max-width: 100%;
+    }
+.row.additions { 
+    gap: 20px;
+}
+    section.market-information .row .col-md-6 .top-contentblock h3,
+    h2,
+    .inner-wrapper h2 {
+        font-size: 20px;
+    }
+    .informations p span {
+        font-size: 18px;
+    }
+    .information-blocks>div {
+        max-width: 100%;
+        width: 100%;
+        flex: 100%;
+    }
+    .information-blocks {
+        flex-wrap: wrap;
+    }
+    .piechart [class*="col-md"] h2 {
+        padding-top: 30px;
+    }
+    .main-car {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .bottom-block .img-block {
+        max-width: 60px;
+        margin: 0 auto;
+    }
+    .left-img {
+        max-width: calc(100% - 60px);
+    }
+    
+   .fees-meinsection {
+        padding: 20px;
+    }
+    .top-contentblock {
+        padding-right: 0;
+    }
+    .bottom-block .content-info {
+        padding-left: 0;
+        max-width: 100%;
+        padding-top: 10px;
+    }
+    .information ul.row li,.left-img p,section.market-information .row .col-md-6 .top-contentblock>p {
+        font-size: 16px;
+        line-height: normal;
+    }
+    section.market-information .row .col-md-6 .top-contentblock>p strong {
+        width: 100%;
+    }
+    .imageblock {
+        max-width: 60px;
+    }
+    section.market-information .row .col-md-6 {
+        padding: 20px;
+    }
+    .right-content.text-right {
+        padding-top: 20px;
+    }
+    .information ul.row li {
+        padding-bottom: 5px; 
+    }
+    .information .information {
+   padding: 10px 0px;
+}
+.information ul.row li {
+   max-width: calc(100%/2);
+}
+
+.bottom-text { 
+    padding: 10px;
+}
+section.section-3-wrap {
+    padding: 30px 0;
+}
+span.price-amount{
+    left: -65px;  font-size: 22px;
+}
+.informations { 
+    border-left: 80px solid;  
+}
+}
+
+
 </style>
 
 <div class="container">
@@ -554,10 +622,14 @@ a.link_similar.list {
 
 
 
-          <section class="section-1-wrap">
+          <section class="section-stats">
             <div class="container">
-               <div class="row additions">
-
+            <div class="heading-holder">
+            <h2>Your Weekly Stats and Analytics <i class="fa-sharp fa-solid fa-chart-simple"></i>  
+            </h2> 
+            <p>A PostYourCars listing specialist has reviewed your listing and has some suggestions for you based on the data we have gathered.</p>
+            </div>
+               <div class="row additions"> 
 
                 <div class="d-flex">
 
@@ -719,6 +791,8 @@ a.link_similar.list {
                     <div class="col-md-4">
                         <div class="right-content text-right pr-4">
                             <h2>4% or $1,500</h2> </div>
+                            <div class="bottom-text">15% more likely to sell.
+                            <span>$172,000</h2> </div>
                     </div>
                 </div>
             </div>
