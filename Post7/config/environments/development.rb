@@ -1,6 +1,19 @@
 require "active_support/core_ext/integer/time"
 
+
+
 Rails.application.configure do
+
+  config.middleware.insert_before ActionDispatch::Static, Rack::Cors do
+    allow do
+      origins '*'
+      resource '*', :headers => :any, :methods => [:get, :post, :options]
+    end
+  end
+
+
+  config.active_storage.replace_on_assign_to_many = false
+
   # Settings specified here will take precedence over those in config/application.rb.
 
   # In the development environment your application's code is reloaded any time
@@ -8,7 +21,7 @@ Rails.application.configure do
   # since you don't have to restart the web server when you make code changes.
   config.cache_classes = false
 
-
+  # config.hosts << "e874-112-196-23-172.in.ngrok.io"
 
   config.hosts << /[a-z0-9-.]+\.ngrok\.io/
 
