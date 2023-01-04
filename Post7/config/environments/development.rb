@@ -10,8 +10,8 @@ Rails.application.configure do
 
 
 
-  config.hosts << /[a-z0-9-.]+\.ngrok\.io/
-
+#  config.hosts << /[a-z0-9-.]+\.ngrok\.io/
+config.hosts << "pmv.postyourcars.com"
   
   # Do not eager load code on boot.
   config.eager_load = false
