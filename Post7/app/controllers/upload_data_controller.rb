@@ -1,5 +1,5 @@
 class UploadDataController < ApplicationController
-  # before_action :set_car, only: %i[ show edit update destroy ]
+  before_action :set_car, only: %i[ destroy ]
   protect_from_forgery with: :null_session
 
   # GET /cars or /cars.json
@@ -11,6 +11,7 @@ def index
     @secretMenuItems = UploadDatum.all
     images = []
     @secretMenuItems.each do |item|
+      
        imageData= item.images.map{|val| {"#{val.name}": val.url } }
         data={data: item,images: imageData}
         images << data
@@ -35,8 +36,9 @@ end
 
 
     @upload_data = UploadDatum.new(upload_datas)
+    # @upload_data.images.attach(params[:images])
+
     if @upload_data.save
-      @upload_data.images.attach(params[:images])
       render json: {status: 200,message: "data save successfully","params": params}
     end
     
