@@ -213,7 +213,7 @@ span.price-amount {
      margin-bottom: 20px;
  }
  
- .inner-wrapper h2 {
+ .inner-wrapper h2,section.fees-meinsection.purchase_offer .inner-wrapper h2{
      font-size: 28px;
      background: rgb(60, 122, 36);
      background: -moz-linear-gradient(85deg, rgba(60, 122, 36, 1) 0%, rgba(113, 211, 98, 1) 100%);
@@ -247,12 +247,10 @@ span.price-amount {
     color: #91919b;
     margin-bottom: 10px;
 }
- section.market-information .row .col-md-6 .top-contentblock h3 {
-     font-size: 24px;
-     font-weight: 900;
+ section.market-information .row .col-md-6 .top-contentblock h3,.fees-meinsection .content-block h2 { 
+     font-weight: 700;
      display: inline-flex;
-     margin: 0;
-     line-height: 30px;
+     margin: 0; 
      background: rgb(46, 88, 128);
      background: -moz-linear-gradient(85deg, rgba(46, 88, 128, 1) 0%, rgba(184, 228, 255, 1) 100%);
      background: -webkit-linear-gradient(85deg, rgba(46, 88, 128, 1) 0%, rgba(184, 228, 255, 1) 100%);
@@ -340,7 +338,7 @@ section.market-information .row .col-md-6 {
 }
 .car-section h2 {
     font-size: 26px;
-    font-weight: 900;
+    font-weight: 700;
     margin-bottom: 10px;
     text-align: left;
     background: rgb(131,45,32);
@@ -445,6 +443,99 @@ a.link_similar.list {
     margin-top: 30px;
     display: flex;
     justify-content: space-between;
+}
+
+/* 05-01-2023 */
+.content-block h2 {
+    font-weight: 700;
+    text-transform: capitalize;
+}
+
+.offer_main {
+    display: flex;
+    justify-content: space-between;
+    background: #cdeac7;
+    padding: 15px 20px;
+    border-radius: 10px;
+}
+
+.offer_lists {
+    max-width: 900px;
+    display: grid;
+    grid-template-columns: repeat(1 ,3fr);
+    gap: 20px;
+    margin-top: 20px;
+}
+ 
+.offer_main>div {
+    text-transform: capitalize;
+    font-weight: 600;
+    font-size: 20px;
+    flex: calc(100%/3);
+    max-width: calc(100%/3);
+}
+  
+.offer_date {
+    text-align: right;
+}
+
+.offered_amount {
+    text-align:  center;
+}
+
+.left-col h2+p {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+section.fees-meinsection.performance_listing .content-block {
+    display: flex;
+    align-items: center;
+}
+ 
+
+section.fees-meinsection.performance_listing .content-block .left-col {
+    max-width: 900px;
+    flex: 1;
+}
+
+section.fees-meinsection.performance_listing .content-block .right-col {
+    flex: 100%;
+    max-width: calc(100% - 900px);
+    text-align: right;
+}
+
+.right-col img {
+    display: inline;
+    width: 220px;
+}
+
+ 
+
+section.fees-meinsection.similar_listing .offer_lists {
+    grid-template-columns: repeat(3,1fr);
+    max-width: max-content;
+}
+
+section.fees-meinsection.similar_listing .car-section.col-md-4 {
+    width: 100%;
+}
+ 
+.offer_lists .car-section a {
+    color: #0651ff;
+    text-decoration: underline;
+}
+
+section.last_section .row > h2 {
+    font-weight: 600;
+    margin-bottom: 25px;
+}
+  
+.content_section_1:not(:last-child) {
+    margin-bottom: 25px;
+}
+.offer_lists .car-section a:hover {
+    background: none;
 }
  /* Media Query Start */
 @media (max-width: 1024px) {
@@ -748,9 +839,9 @@ span.price-amount{
                         <br>
                     <p>- This listing is less likely to sell in its current state. Consider price as the main factor that is hurting your sales potential</p>
                     </div>
-<div class="right-col">
-<img src="/assets/image-meter.png">
-</div>
+                    <div class="right-col">
+                      <img src="/assets/Artboard.svg">
+                    </div>
                 </div>
                     </div>
 
@@ -788,10 +879,10 @@ span.price-amount{
 
 
 
-        <section class="fees-meinsection last_section">
+        <section class="last_section">
             <div class="row">
             <h2>What you can do to improve your listing?</h2>
-                <div class="content-block">
+                <div class="content-block inner-wrapper">
                     <div class="content_section_1">
                         <h2>Consider a  Price Adjustment</h2>
                         <p>super charge your listing by droping the price and attracting new potential buyers.</p>
@@ -813,10 +904,10 @@ span.price-amount{
 
 
 
-
+<!-- 
         <div class="footer-section">
         <p class="footer">* Sale timeframes and price projections are only estimates and not guaranteed by PostYourCars</p>
-        </div>
+        </div> -->
     </div>
    
 
