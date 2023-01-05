@@ -11,6 +11,9 @@ Rails.application.routes.draw do
 
   post "/upload_datas", to: "upload_data#index"
 
+  get "/all_upload_data", to: "upload_data#index"
+
+
   delete "/upload_data/:id", to: "upload_data#destroy"
 
   
