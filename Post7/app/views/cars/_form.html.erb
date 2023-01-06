@@ -387,6 +387,19 @@ $(document).ready(function(){
   $("#create_cars").click(function(e){  
     console.log('working')
 e.preventDefault();
+let valid=false;
+for(let i=1;i<=7;i++){
+    if($("#offer"+i+" #days").val() !== "" && $("#offer"+i +" #Mileage").val() != ""){
+        valid=true
+    }
+
+}
+if(valid==false){
+    alert('Please fill atleast one offer');
+    return false;
+}
+
+
     $.ajax({
         url: "/cars",
         data: {
