@@ -7,8 +7,27 @@ class CarsController < ApplicationController
     @cars = Car.all
   end
 
+  def download_pdf 
+
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render  pdf: "car Details#{@cars.name}", template: "users/_user", formats: [:html], layout: "pdf", orientation: "landscape", page_size: "A4", page_width: "11.7in", page_height: "16.52in"
+      end
+    end
+
+  end
+
   # GET /cars/1 or /cars/1.json
   def show
+    @car = Car.find(params[:id])
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render  pdf: "car Details#{@car.name}", template: "cars/showpdf", formats: [:html], layout: "pdf",page_size: "A4" #,disposition: "attachment"
+      end
+    end
+
   end
 
   # GET /cars/new
