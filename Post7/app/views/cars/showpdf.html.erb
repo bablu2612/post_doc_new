@@ -1,3 +1,4 @@
+
  <style type="text/css">
  @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
  body,p,*{
@@ -68,8 +69,7 @@
     margin-bottom: 20px;
 }
  
- .section-1-wrap {
-     border-bottom: 2px solid #ddd;
+ .section-1-wrap { 
      padding: 40px 0 0;
  }
  .section-stats{
@@ -80,9 +80,10 @@
      padding: 0;
  }
   
- .section-2-wrap {
-     border-bottom: 2px solid #ddd;
- }
+ .header-area {
+    background: #eef4fa;
+    padding-bottom: 20px;
+}
  
  .car-section img {
      width: 100px;
@@ -153,10 +154,12 @@ span.price-amount {
      border-color: #f55b43;
  }
  .section-1-inner {
-    margin: 0;padding: 0;
+    margin: 0; 
 }
- .information>h2 {
-    margin-bottom: 20px;    font-weight: 700;
+ 
+.information h2 {
+    font-weight: 700;
+    margin-bottom: 20px;
 }
 .informations.infosection1 {
     border-color: #0d76d6;
@@ -399,6 +402,8 @@ a.link_similar.list {
     max-width: calc(100%/2 - 20px);
     justify-content: space-between;
     padding: 0;
+    min-height: 90px;
+
 }
  
 .number_holder {
@@ -417,10 +422,13 @@ a.link_similar.list {
  
 .row.additions {
     flex-wrap: wrap;
-    gap: 30px;
+    gap: 20px 30px;
     width: 100%;
     justify-content: center;
     margin: 0;
+}
+.heading-holder {
+    margin-bottom: 15px;
 }
 .heading-holder h2 i {
     color: #406ae8;
@@ -510,10 +518,7 @@ section.fees-meinsection.performance_listing .content-block .right-col {
 .right-col img {
     display: inline;
     width: 220px;
-}
-
- 
-
+} 
 section.fees-meinsection.similar_listing .offer_lists {
     grid-template-columns: repeat(3,1fr);
     max-width: max-content;
@@ -539,6 +544,41 @@ section.last_section .row > h2 {
 .offer_lists .car-section a:hover {
     background: none;
 }
+.last_section .content-block h2 {
+    padding-left: 20px;
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.last_section  .content-block h2:before {
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 4px;
+    width: 15px;
+    background: #000;
+}
+
+.heading-holder h2 {
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 0;
+    line-height: normal;
+}
+
+.heading-holder p {
+    margin-top: 0;
+} 
+
+.content-block.inner-wrapper .content_section_1:not(:nth-child(1)) h2 {
+    color: #000;
+    -webkit-background-clip: unset;
+    background: none;
+    -webkit-text-fill-color: unset;
+}
+
  /* Media Query Start */
 @media (max-width: 1024px) {
     .container.inner-wrapper {
@@ -587,6 +627,9 @@ section.fees-meinsection .inner-wrapper [class*="col-md"] {
 }
 
 @media (max-width: 767px) {
+    .heading-holder h2 {
+    font-size: 20px;
+}
     section.fees-meinsection.performance_listing .content-block .left-col {
     max-width: 100%;
     flex: 1;
@@ -722,46 +765,53 @@ span.price-amount{
 }
 }
 
+
+
 </style>
+<div class="header-area">
+<section class="section-1-wrap">
 <div class="container">
-        <section class="section-1-wrap">
-            <div class="container">
-               <div class="row">
-                <div class="section-1-inner">
-                <%= wicked_pdf_image_tag "http://pmv.postyourcars.com/assets/logo1.jpeg" %>
+   <div class="row">
+    <div class="section-1-inner">
+    <%= wicked_pdf_image_tag "http://pmv.postyourcars.com/assets/logo1.jpeg" %>
+        </div> 
+    <div class="section-1-inner"> 
+        <p>A PostYourCars listing specialist has reviewed your listing and has some suggestions
+        for you based on the data we have gathered for the week. Please review listings stats
+        for this week</p>
+    </div>
+   </div>
+</div>
+</section>
+<section class="section-2-wrap">
+<div class="container">
+<div class="row">
+<div class="information">
+<div class="container">
+    <h2>Information</h2>
+    <ul class="row">
+        <li class="col-md-4 col-sm-6"><b>Name</b> <br /> <div class="information"><%= @car.name %></div> </li>
+        <li class="col-md-4 col-sm-6"><b>Phone No</b> <br /> <div class="information"> <%= number_to_phone(@car.phone, area_code: true)  %> </div></li>
+        <li class="col-md-4 col-sm-6"><b>Model</b> <br /> <div class="information"> <%= @car.model %> </div></li>
+        <li class="col-md-4 col-sm-6"><b>Year</b> <br /> <div class="information"> <%= @car.year %> </div> </li>
+        <li class="col-md-4 col-sm-6"><b>Make</b> <br /> <div class="information"> <%= @car.make %> </div></li>
+        <li class="col-md-4 col-sm-6"><b>Body</b> <br /> <div class="information"> <%= @car.body %> </div></li>
+        <li class="col-md-4 col-sm-6"><b>Vin #</b>  <br /> <div class="information"><%= @car.vin %></div></li>
+        <li class="col-md-4 col-sm-6"><b>Miles</b>  <br /> <div class="information"><%= @car.miles %></div></li>
+    </ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
 
-                </div> 
-                <div class="section-1-inner"> 
-                    <p>PostYourCars aggregates industry leading data points to give you the best value
-                    estimates for any car</p>
-                </div>
-               </div>
-            </div>
-        </section>
-        <section class="section-2-wrap">
-            <div class="information">
-                <h2>Information</h2>
-                <ul class="row">
-                    <li class="col-md-4 col-sm-6"><b>Name</b> <br /> <div class="information"><%= @car.name %></div> </li>
-                    <li class="col-md-4 col-sm-6"><b>Phone No</b> <br /> <div class="information"> <%= number_to_phone(@car.phone, area_code: true)  %> </div></li>
-                    <li class="col-md-4 col-sm-6"><b>Model</b> <br /> <div class="information"> <%= @car.model %> </div></li>
-                    <li class="col-md-4 col-sm-6"><b>Year</b> <br /> <div class="information"> <%= @car.year %> </div> </li>
-                    <li class="col-md-4 col-sm-6"><b>Make</b> <br /> <div class="information"> <%= @car.make %> </div></li>
-                    <li class="col-md-4 col-sm-6"><b>Body</b> <br /> <div class="information"> <%= @car.body %> </div></li>
-                    <li class="col-md-4 col-sm-6"><b>Vin #</b>  <br /> <div class="information"><%= @car.vin %></div></li>
-                    <li class="col-md-4 col-sm-6"><b>Miles</b>  <br /> <div class="information"><%= @car.miles %></div></li>
-                </ul>
-            </div>
-        </section>
-
-
-
+<div class="container"> 
           <section class="section-stats">
-            <div class="container">
+            <div class="container px-0">
             <div class="heading-holder">
-            <h2>Your Weekly Stats and Analytics <i class="fa-sharp fa-solid fa-chart-simple"></i>  
+            <h2>Stats and Analytics <i class="fa-sharp fa-solid fa-chart-simple"></i>  
             </h2> 
-            <p>A PostYourCars listing specialist has reviewed your listing and has some suggestions for you based on the data we have gathered.</p>
             </div>
                <div class="row additions"> 
                 <div class="d-flex">
@@ -826,7 +876,7 @@ span.price-amount{
                 <div class="row">
                     <div class="col-md-12">
                         <div class="content-block">
-                            <h2>purchase offer</h2>
+                            <h2>Purchase Offers</h2>
                             <p>These are the most recent offers we have recived on your car at its current listing price.</p>
                         </div>
                     </div>
@@ -843,17 +893,7 @@ span.price-amount{
                     <% end %>
 
 
-                   <!-- 
-                    <div class="offer_main">
-                        <div class="name">someone in Seattle WA</div>
-                        <div class="offered_amount">Offered: <span class="price_amount">$172,000</span> </div>
-                        <div class="offer_date">January, 2nd</div>
-                    </div>
-                    <div class="offer_main">
-                        <div class="name">someone in Seattle WA</div>
-                        <div class="offered_amount">Offered: <span class="price_amount">$172,000</span> </div>
-                        <div class="offer_date">January, 2nd</div>
-                    </div> -->
+                   
                 </div>
             </div>
         </section>
@@ -899,29 +939,6 @@ span.price-amount{
         </div> -->
     </div>
    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
