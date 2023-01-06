@@ -204,6 +204,8 @@ h2 {
             <div class="similar_wrap">
             <h2>offer </h2>
             <div class="similar_list">
+            <% if @car.offer.length >= 1 %>
+
                 <%= form_with url: "/cars/#{params[:car_id]}/car_compares",id: "offer1", method: :post do |form| %>
                     <input type="hidden" value="<%=@car.offer[0].id %>" id="car_compares_id" />    
                     <div class="form-group">
@@ -223,7 +225,12 @@ h2 {
                         <%= form.label :car_id %>
                             <%= form.hidden_field :car_id, class: "block shadow-sm rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full", value: params[:car_id], disabled: true %>
                     </div>
+
                 <% end %>
+            <% end %>
+
+            <% if @car.offer.length >= 2 %>
+
                 <%= form_with url: "/cars/#{params[:car_id]}/car_compares",id: "offer2", method: :post do |form| %>
                     <input type="hidden" value="<%=@car.offer[1].id %>" id="car_compares_id" />    
 
@@ -245,7 +252,11 @@ h2 {
                             <%= form.hidden_field :car_id, class: "block shadow-sm rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full", value: params[:car_id], disabled: true %>
                     </div>
                 <% end %>
-                                
+                      
+        <% end %>
+
+                <% if @car.offer.length >= 3 %>
+
                 <%= form_with url: "/cars/#{params[:car_id]}/car_compares",id: "offer3", method: :post do |form| %>
                     <input type="hidden" value="<%=@car.offer[2].id %>" id="car_compares_id" />    
                     <div class="form-group">
@@ -266,6 +277,7 @@ h2 {
                         <%= form.hidden_field :car_id, class: "block shadow-sm rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full", value: params[:car_id], disabled: true %>
                     </div>
                     
+                <% end %>
                 <% end %>
 
 
@@ -491,15 +503,6 @@ e.preventDefault();
 
             }
            
-        
-
-
-
-
-
-
-
-
 
 
         },

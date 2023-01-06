@@ -17,7 +17,7 @@
         height: 50px;
         box-shadow: 0 5px 5px 0 #0000000d !important;
     } 
-    .similar_list form,
+   
     .main-wrapper {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -63,32 +63,39 @@ h2 {
 .nav-cstm a:hover{
   background: #2563eb;
 }
-.similar_list form{
+ 
+/* 07-01-2023 */
+ 
+.form-group label {
+    text-transform: uppercase;
+} 
+
+
+.similar_list form .form-group {
+    margin-top: 20px;
+}
+.similar_list form {
+    max-width: calc(100%/3 - 15px);
+    flex: calc(100%/3 - 15px);
+    width: 100%;
+    border: 1px solid #ddd;
+    padding: 25px; 
     display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    gap: 30px;
+    grid-template-columns: repeat(1, 1fr); 
     width: 100%;
     justify-self: stretch;
 }
-.similar_list {
-    display: flex;
-} 
-
-.similar_list form:not(:nth-child(3n)) {
-    border-right: 1px solid #ddd;
-    padding-right: 25px;
-    margin-right: 0px;
+.similar_list form .form-group:last-child {
+    margin-top: 0;
 }
-/* 07-01-2023 */
 .similar_list {
     flex-wrap: wrap;
     display: flex;
-    gap: 18px;
+    gap: 30px 22px;
+    justify-content: flex-start;
 }
-.similar_list form {
-    max-width: calc(100%/2 - 210px);
-    flex: calc(100%/2 - 210px);
-    width: 100%;
+.similar_list input[type="hidden"]+.form-group {
+    margin-top: 0;
 }
 </style>
 <%= form_with(model: car, class: "contents",id: "create_form") do |form| %>
