@@ -293,10 +293,11 @@ h2 {
 
 
 
+                <% if @car.offer.length >= 4 %>
 
 
                 <%= form_with url: "/cars/#{params[:car_id]}/car_compares",id: "offer4", method: :post do |form| %>
-                    <input type="hidden" value="<%=@car.offer[2].id %>" id="car_compares_id" />    
+                    <input type="hidden" value="<%=@car.offer[3].id %>" id="car_compares_id" />    
                     <div class="form-group">
                         <%= form.label :days,'Name' %><span class="text-red-500">*</span>
                         <%= form.text_field :days,id:"days",value: @car.offer[3].name, class: "block shadow-sm rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full",placeholder: "Enter name" %>
@@ -318,11 +319,12 @@ h2 {
                 <% end %>
 
 
+<% end %>
 
-
+<% if @car.offer.length >= 5 %>
 
                 <%= form_with url: "/cars/#{params[:car_id]}/car_compares",id: "offer5", method: :post do |form| %>
-                <input type="hidden" value="<%=@car.offer[2].id %>" id="car_compares_id" />    
+                <input type="hidden" value="<%=@car.offer[4].id %>" id="car_compares_id" />    
                 <div class="form-group">
                     <%= form.label :days,'Name' %><span class="text-red-500">*</span>
                     <%= form.text_field :days,id:"days",value: @car.offer[4].name, class: "block shadow-sm rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full",placeholder: "Enter name" %>
@@ -342,10 +344,14 @@ h2 {
                 </div>
                 
             <% end %>
+            <% end %>
+
+
+            <% if @car.offer.length >= 6 %>
 
 
             <%= form_with url: "/cars/#{params[:car_id]}/car_compares",id: "offer6", method: :post do |form| %>
-            <input type="hidden" value="<%=@car.offer[2].id %>" id="car_compares_id" />    
+            <input type="hidden" value="<%=@car.offer[5].id %>" id="car_compares_id" />    
             <div class="form-group">
                 <%= form.label :days,'Name' %><span class="text-red-500">*</span>
                 <%= form.text_field :days,id:"days",value: @car.offer[5].name, class: "block shadow-sm rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full",placeholder: "Enter name" %>
@@ -365,10 +371,14 @@ h2 {
             </div>
             
         <% end %>
+        <% end %>
 
+
+
+        <% if @car.offer.length >= 7 %>
 
         <%= form_with url: "/cars/#{params[:car_id]}/car_compares",id: "offer7", method: :post do |form| %>
-        <input type="hidden" value="<%=@car.offer[2].id %>" id="car_compares_id" />    
+        <input type="hidden" value="<%=@car.offer[6].id %>" id="car_compares_id" />    
         <div class="form-group">
             <%= form.label :days,'Name' %><span class="text-red-500">*</span>
             <%= form.text_field :days,id:"days",value: @car.offer[6].name, class: "block shadow-sm rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full",placeholder: "Enter name" %>
@@ -393,6 +403,7 @@ h2 {
 
 
 
+       <% end %>
 
 
 
