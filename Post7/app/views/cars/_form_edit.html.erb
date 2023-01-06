@@ -98,6 +98,70 @@ justify-content: flex-start;
 margin-top: 0;
 }
 
+
+.similar_list form {
+max-width: calc(100%/3 - 15px);
+flex: calc(100%/3 - 15px);
+border: 1px solid #ddd;
+padding: 25px;
+display: grid;
+grid-template-columns: repeat(1, 1fr);
+width: 100%;
+justify-self: stretch;
+background: #ffffffad;
+}
+.main-wrapper>.form-group:not(:last-child) {
+margin-bottom: 15px;
+}
+@media (max-width: 1280px){
+
+h2 { 
+font-size: 24px;  
+padding-left: 15px;
+}
+
+.main-wrapper {
+margin-bottom: 50px;
+}
+.similar_list, .main-wrapper {
+padding: 30px;
+}
+
+}
+@media (max-width: 991px){
+.similar_list form {
+max-width: calc(100%/2 - 15px);
+flex: calc(100%/2 - 15px); 
+}
+.main-wrapper { 
+grid-template-columns: repeat(2, 1fr);
+gap: 20px; 
+}
+
+}
+
+@media (max-width: 767px){ 
+.similar_list form {
+    max-width: 100%;
+    flex: 100%;
+}
+.similar_list, .main-wrapper{
+    padding: 20px;
+}
+h2 { 
+    font-size: 20px; 
+    padding-left: 10px;
+}
+.similar_list {
+    gap: 0;
+}
+.main-wrapper {
+    margin-bottom: 40px;     display: block;
+}
+.similar_list form:not(:last-child) {
+    margin-bottom: 20px;
+}
+}
  
 </style>
 <%= form_with(model: car, class: "contents",id: "create_form") do |form| %>

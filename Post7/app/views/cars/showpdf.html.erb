@@ -1,4 +1,3 @@
-
  <style type="text/css">
  @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
  body,p,*{
@@ -729,7 +728,8 @@ span.price-amount{
             <div class="container">
                <div class="row">
                 <div class="section-1-inner">
-                <%= wicked_pdf_image_tag "http://localhost:3000/assets/logo1.jpeg" %>
+                <%= wicked_pdf_image_tag "http://pmv.postyourcars.com/assets/logo1.jpeg" %>
+
                 </div> 
                 <div class="section-1-inner"> 
                     <p>PostYourCars aggregates industry leading data points to give you the best value
@@ -742,14 +742,14 @@ span.price-amount{
             <div class="information">
                 <h2>Information</h2>
                 <ul class="row">
-                    <li class="col-md-4 col-sm-6"><b>Name1</b> <div class="information"><%= @car.name %></div> </li>
-                    <li class="col-md-4 col-sm-6"><b>Phone No</b>  <div class="information"> <%= number_to_phone(@car.phone, area_code: true)  %> </div></li>
-                    <li class="col-md-4 col-sm-6"><b>Model</b>  <div class="information"> <%= @car.model %> </div></li>
-                    <li class="col-md-4 col-sm-6"><b>Year</b>  <div class="information"> <%= @car.year %> </div> </li>
-                    <li class="col-md-4 col-sm-6"><b>Make</b>  <div class="information"> <%= @car.make %> </div></li>
-                    <li class="col-md-4 col-sm-6"><b>Body</b>  <div class="information"> <%= @car.body %> </div></li>
-                    <li class="col-md-4 col-sm-6"><b>Vin #</b>   <div class="information"><%= @car.vin %></div></li>
-                    <li class="col-md-4 col-sm-6"><b>Miles</b>   <div class="information"><%= @car.miles %></div></li>
+                    <li class="col-md-4 col-sm-6"><b>Name</b> <br /> <div class="information"><%= @car.name %></div> </li>
+                    <li class="col-md-4 col-sm-6"><b>Phone No</b> <br /> <div class="information"> <%= number_to_phone(@car.phone, area_code: true)  %> </div></li>
+                    <li class="col-md-4 col-sm-6"><b>Model</b> <br /> <div class="information"> <%= @car.model %> </div></li>
+                    <li class="col-md-4 col-sm-6"><b>Year</b> <br /> <div class="information"> <%= @car.year %> </div> </li>
+                    <li class="col-md-4 col-sm-6"><b>Make</b> <br /> <div class="information"> <%= @car.make %> </div></li>
+                    <li class="col-md-4 col-sm-6"><b>Body</b> <br /> <div class="information"> <%= @car.body %> </div></li>
+                    <li class="col-md-4 col-sm-6"><b>Vin #</b>  <br /> <div class="information"><%= @car.vin %></div></li>
+                    <li class="col-md-4 col-sm-6"><b>Miles</b>  <br /> <div class="information"><%= @car.miles %></div></li>
                 </ul>
             </div>
         </section>
@@ -834,7 +834,7 @@ span.price-amount{
                  </div>
                  <div class="offer_lists">
 
-                 <% @car.offer.limit(3).each do |car| %>
+                 <% @car.offer.each do |car| %>
                     <div class="offer_main">
                         <div class="name"><%= car.name %></div>
                         <div class="offered_amount">Offered: <span class="price_amount">$ <%= car.amount %></span> </div>
@@ -860,76 +860,25 @@ span.price-amount{
 
 
 
-
-
-
-
-        <!-- Listing Performance section -->
-        <section class="fees-meinsection performance_listing">
-            <div class="inner-wrapper">
-                <div class="row">
-                    <div class="col-md-12">
-                    <div class="content-block">
-                    <div class="left-col">
-                        <h2>Listing Performance</h2>
-                    <p>Your listing is performing below average when compared to similar listings.</p>
-                        <br>
-                    <p>- This listing is less likely to sell in its current state. Consider price as the main factor that is hurting your sales potential</p>
-                    </div>
-                    <div class="right-col">
-                    <%= wicked_pdf_image_tag "http://localhost:3000/assets/Artboard.svg" %>
-
-                    </div>
-                </div>
-                    </div>
-
-                 </div>
-                 
-            </div>
-        </section>
-
-
-
-
-        <!-- similar listing section -->
-        <section class="fees-meinsection similar_listing">
-            <div class="inner-wrapper">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="content-block">
-                            <h2>Similar Listing</h2>
-                            <p>These listings were gathered from the web.Consider that your potential buyers will likely compare your car with these.</p>
-                        </div>
-                    </div>
-
-                 </div>
-                 <div class="offer_lists">
-
-                 <% @car.car_compare.limit(3).each do |car| %>
-                    <div class="car-section col-md-4 ">
-                          <a href="<%= car.url %>" class="link_similar list" target="_blank" >Listing Link </a>
-                    </div>
-                    <% end %>
-                   
-                </div>
-            </div>
-        </section>
-
-
-
         <section class="last_section">
             <div class="row">
             <h2>What you can do to improve your listing?</h2>
                 <div class="content-block inner-wrapper">
+                <div class="content_section_1">
+                    <h2>Premium Listing</h2>
+                    <p>Talk to your post sales specialist about our Premium listing services</p>
+              </div>
+                <div class="content_section_1">
+                <h2>Additional Information</h2>
+                <p>Be certain to share any information about your car that may positively effect its price like
+                performance options, interior luxury packages, and suspension upgrades</p>
+            </div>
+
                     <div class="content_section_1">
                         <h2>Consider a  Price Adjustment</h2>
                         <p>super charge your listing by droping the price and attracting new potential buyers.</p>
                     </div>
-                     <div class="content_section_1">
-                        <h2>Additional Information</h2>
-                        <p>Be certain to share any information about your car that may positively effect its price like
-                        performance options, interior luxury packages, and suspension upgrades</p>
-                    </div>
+
                     <div class="content_section_1">
                         <h2>Photos</h2>
                         <p>There are many potential buyers across the states who cant see your car in person. Give them all
@@ -950,6 +899,29 @@ span.price-amount{
         </div> -->
     </div>
    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
