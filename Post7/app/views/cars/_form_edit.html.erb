@@ -116,9 +116,9 @@ margin-top: 0;
 
             <div class="main-wrapper">
                 <div class="form-group">
-                    <%= form.label :name %>
+                    <%= form.label :name %> <span class="text-red-500">*</span>
+
                         <%= form.text_field :name, id: "name", class: "block shadow-sm rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full",placeholder: "Enter name" %>
-                        <span class="text-red-500">*</span>
                 </div>
 
                 <div class="form-group">
