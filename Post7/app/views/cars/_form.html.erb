@@ -74,13 +74,22 @@ h2 {
     display: flex;
 } 
 
-.similar_list form:not(:nth-child(3)) {
+.similar_list form:not(:nth-child(3n)) {
     border-right: 1px solid #ddd;
-    padding-right: 40px;
-    margin-right: 40px;
+    padding-right: 25px;
+    margin-right: 0px;
 }
-
- 
+/* 07-01-2023 */
+.similar_list {
+    flex-wrap: wrap;
+    display: flex;
+    gap: 18px;
+}
+.similar_list form {
+    max-width: calc(100%/2 - 210px);
+    flex: calc(100%/2 - 210px);
+    width: 100%;
+}
 </style>
 <%= form_with(model: car, class: "contents",id: "create_form") do |form| %>
     <% if car.errors.any? %>
@@ -402,6 +411,7 @@ e.preventDefault();
 
             for(let i=1;i<=7;i++){
                 if($("#offer"+i+" #days").val() !== "" && $("#offer"+i +" #Mileage").val() != ""){
+
                     $.ajax({
                         url: "/cars/"+data.data.id+"/car_offers",
                         data: {
@@ -426,6 +436,15 @@ e.preventDefault();
                         type: 'POST'
                     })
                 }
+
+                     if(i==7){
+                                setTimeout(function () {
+                                    window.location.href = "/cars";
+    
+                                 }, 250);
+                            }
+
+
            
             }
            

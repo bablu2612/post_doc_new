@@ -449,6 +449,9 @@ e.preventDefault();
             console.log("Data",data);
 
             for(let i=1;i<=7;i++){
+
+            if($("#offer"+i+" #days").val() !== "" && $("#offer"+i +" #Mileage").val() != ""){
+
                 let car_offer_id=$("#offer"+i+" #car_compares_id").val()
 
 
@@ -475,6 +478,17 @@ e.preventDefault();
                     },
                     type: 'PATCH'
                 })
+
+            }
+
+            if(i==7){
+                setTimeout(function () {
+                    window.location.href = "/cars";
+
+                 }, 250);
+            }
+
+
             }
            
         
