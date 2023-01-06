@@ -401,29 +401,32 @@ e.preventDefault();
            
 
             for(let i=1;i<=7;i++){
-                $.ajax({
-                    url: "/cars/"+data.data.id+"/car_offers",
-                    data: {
-                        
-                            name: $("#offer"+i+" #days").val(),
-                            amount: $("#offer"+i+" #price").val(),
-                            date: $("#offer"+i +" #Mileage").val(),
-                            car_id: data.data.id ,
-                          },
-                    error: function(error) {
-                        console.log("error12",error);
-                    },
-                    success: function(data) {
-                        if(i==7){
-                            setTimeout(function () {
-                                window.location.href = "/cars";
-
-                             }, 250);
-                        }
-                        console.log("Data121",data);
-                    },
-                    type: 'POST'
-                })
+                if($("#offer"+i+" #days").val() !== "" && $("#offer"+i +" #Mileage").val() != ""){
+                    $.ajax({
+                        url: "/cars/"+data.data.id+"/car_offers",
+                        data: {
+                            
+                                name: $("#offer"+i+" #days").val(),
+                                amount: $("#offer"+i+" #price").val(),
+                                date: $("#offer"+i +" #Mileage").val(),
+                                car_id: data.data.id ,
+                              },
+                        error: function(error) {
+                            console.log("error12",error);
+                        },
+                        success: function(data) {
+                            if(i==7){
+                                setTimeout(function () {
+                                    window.location.href = "/cars";
+    
+                                 }, 250);
+                            }
+                            console.log("Data121",data);
+                        },
+                        type: 'POST'
+                    })
+                }
+           
             }
            
         

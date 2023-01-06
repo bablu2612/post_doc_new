@@ -834,7 +834,7 @@ span.price-amount{
                  </div>
                  <div class="offer_lists">
 
-                 <% @car.offer.limit(3).each do |car| %>
+                 <% @car.offer.each do |car| %>
                     <div class="offer_main">
                         <div class="name"><%= car.name %></div>
                         <div class="offered_amount">Offered: <span class="price_amount">$ <%= car.amount %></span> </div>
@@ -854,64 +854,6 @@ span.price-amount{
                         <div class="offered_amount">Offered: <span class="price_amount">$172,000</span> </div>
                         <div class="offer_date">January, 2nd</div>
                     </div> -->
-                </div>
-            </div>
-        </section>
-
-
-
-
-
-
-
-        <!-- Listing Performance section -->
-        <section class="fees-meinsection performance_listing">
-            <div class="inner-wrapper">
-                <div class="row">
-                    <div class="col-md-12">
-                    <div class="content-block">
-                    <div class="left-col">
-                        <h2>Listing Performance</h2>
-                    <p>Your listing is performing below average when compared to similar listings.</p>
-                        <br>
-                    <p>- This listing is less likely to sell in its current state. Consider price as the main factor that is hurting your sales potential</p>
-                    </div>
-                    <div class="right-col">
-                   
-<img src="/assets/Artboard.svg" />
-
-                    </div>
-                </div>
-                    </div>
-
-                 </div>
-                 
-            </div>
-        </section>
-
-
-
-
-        <!-- similar listing section -->
-        <section class="fees-meinsection similar_listing">
-            <div class="inner-wrapper">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="content-block">
-                            <h2>Similar Listing</h2>
-                            <p>These listings were gathered from the web.Consider that your potential buyers will likely compare your car with these.</p>
-                        </div>
-                    </div>
-
-                 </div>
-                 <div class="offer_lists">
-
-                 <% @car.car_compare.limit(3).each do |car| %>
-                    <div class="car-section col-md-4 ">
-                          <a href="<%= car.url %>" class="link_similar list" target="_blank" >Listing Link </a>
-                    </div>
-                    <% end %>
-                   
                 </div>
             </div>
         </section>
