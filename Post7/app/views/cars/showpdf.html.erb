@@ -831,7 +831,9 @@
                             </div>
                         </div>
                         <div class="offer_lists">
-                            <% @car.offer.each do |car| %>
+                            <% @car.offer.each_with_index do |car,index| %>
+                                <% if index <= 3 %>
+
                                 <table class="offer_main" style="width: 100%;margin-top: 10px">
                                     <tr>
                                         <td style="width: 33%;">
@@ -850,11 +852,75 @@
                                     </tr>
                                 </table>
                                 <% end %>
+
+                                <% end %>
                         </div>
                     </div>
                 </section>
             </td>
         </tr>
+
+
+
+
+
+
+
+
+
+
+
+        <tr>
+        <td>
+            <!-- purchase_offer section -->
+            <section class="fees-meinsection purchase_offer">
+                <div class="inner-wrapper">
+                   
+                    <div class="offer_lists">
+                        <% @car.offer.each_with_index do |car,index| %>
+                            <% if index > 3 %>
+                            <table class="offer_main" style="width: 100%;margin-top: 10px">
+                                <tr>
+                                    <td style="width: 33%;">
+                                        <div class="name" style="padding: 10px 20px">
+                                            <%= car.name %>
+                                        </div>
+                                    </td>
+                                    <td style="width: 33%;">
+                                        <div class="offered_amount" style="padding: 10px 20px">Offered: <span class="price_amount">$ <%= car.amount %></span> </div>
+                                    </td>
+                                    <td style="width: 33%;">
+                                        <div class="offer_date" style="padding: 10px 20px">
+                                            <%= Date.parse(car.date).strftime("%B %e, %Y") %>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                            <% end %>
+
+                            <% end %>
+                    </div>
+                </div>
+            </section>
+        </td>
+    </tr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         <tr>
             <td>
                 <section class="last_section">
