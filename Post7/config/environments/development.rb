@@ -10,6 +10,7 @@ Rails.application.configure do
       resource '*', :headers => :any, :methods => [:get, :post,:delete, :options]
     end
   end
+#    config.force_ssl = true
 
 
   config.active_storage.replace_on_assign_to_many = false

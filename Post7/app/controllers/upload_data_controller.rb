@@ -5,7 +5,7 @@ class UploadDataController < ApplicationController
   # GET /cars or /cars.json
 
   before_action do
-    ActiveStorage::Current.host = request.base_url
+    ActiveStorage::Current.host ="https://pmv.postyourcars.com"
   end
 def index 
     @secretMenuItems = UploadDatum.all
