@@ -1,5 +1,5 @@
 class CarsController < ApplicationController
-  before_action :set_car, only: %i[ show edit update destroy ]
+  before_action :set_car, only: %i[edit update destroy ]
   protect_from_forgery with: :null_session
 
   # GET /cars or /cars.json
@@ -20,7 +20,7 @@ class CarsController < ApplicationController
 
   # GET /cars/1 or /cars/1.json
   def show
-    @car = Car.find(params[:id])
+    @car = Car.friendly.find(params[:id])
     respond_to do |format|
       format.html
       format.pdf do
@@ -89,7 +89,7 @@ class CarsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_car
-      @car = Car.find(params[:id])
+      @car = Car.friendly.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.

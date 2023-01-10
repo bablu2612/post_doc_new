@@ -68,3 +68,4 @@ gem 'wkhtmltopdf-binary'
 gem 'aws-sdk-s3', require: false
 gem "sidekiq", "<7"
 gem "pry"
+gem 'friendly_id', '~> 5.4.0'
