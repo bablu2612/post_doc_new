@@ -66,10 +66,10 @@
         align-items: center;
     }
     
-    .section-1-wrap img {
-        width: 430px;
+    .section-1-inner img {
+        width: 250px;
         margin-left: 0;
-        margin-bottom: 20px;
+        margin-bottom: 10px;
     }
     
     .section-1-wrap {
@@ -77,6 +77,9 @@
     }
     .section-2-wrap{
         padding: 0px 15px 15px; 
+    }
+    .section-2-wrap h2{
+        font-size: 18px;margin-bottom: 0;line-height: 15px; 
     }
     .section-2-wrap,  .section-1-wrap {
         background: #eef4fa;
@@ -100,7 +103,7 @@
     }
     
     body {
-        background: #f8f8f8;
+        background: #fff;
         font-family: 'Poppins', sans-serif;
     }
     
@@ -174,7 +177,7 @@
     
     .information h2 {
         font-weight: 700;
-        margin-bottom: 20px;
+        margin-bottom: 0;
     }
     
     .informations.infosection1 {
@@ -216,7 +219,7 @@
     .car-section h2 {
         font-size: 20px;
         font-weight: 900;
-        margin-bottom: 20px;
+        margin-bottom: 0px;
         text-align: left;
     }
     
@@ -390,12 +393,11 @@
         color: #91919b;
     }
     section.section-2-wrap b{
-        font-size: 20px;font-weight: 600;margin-bottom: -10px;line-height: 20px;display: block;
+        font-size: 18px;font-weight: 600;margin-bottom: -10px;line-height: 20px;display: block;
     }
     .section-1-inner p {
         margin-bottom: 0px;
-        font-size: 24px;
-        max-width: 1000px;
+        font-size: 18px; 
         line-height: 1.5;
     }
     
@@ -438,7 +440,7 @@
     
     .row.additions {
         flex-wrap: wrap;
-        gap: 20px 30px;
+        gap: 10px;
         width: 100%;
         justify-content: center;
         margin: 0;
@@ -474,7 +476,7 @@
     /* 05-01-2023 */
     
     section.last_section {
-        padding: 0 0 50px;
+        padding: 0 ;
     }
     
     .content-block h2 {
@@ -482,17 +484,17 @@
         text-transform: capitalize;
     }
     
-    .offer_main {
-        background: #cdeac7;
-        padding: 15px 20px;
-        border-radius: 10px;
-    }
+#    .offer_main {
+#      background: #cdeac7;
+#       padding: 15px 20px;
+#       border-radius: 10px;
+#   }
     
-    .offer_lists {
-        max-width: 900px;
-        gap: 20px;
-        margin-top: 20px;
-    }
+    # .offer_lists {
+    #     max-width: 900px;
+    #     gap: 20px;
+    #     margin-top: 20px;
+    # }
     
     .offer_main>div {
         text-transform: capitalize;
@@ -536,10 +538,7 @@
         width: 220px;
     }
     
-    section.fees-meinsection.similar_listing .offer_lists {
-        grid-template-columns: repeat(3, 1fr);
-        max-width: max-content;
-    }
+ 
     
     section.fees-meinsection.similar_listing .car-section.col-md-4 {
         width: 100%;
@@ -551,13 +550,11 @@
     }
     
     section.last_section .row > h2 {
-        font-weight: 600;
-        margin-bottom: 25px;
-        line-height: 35px;
+        font-weight: 600; 
     }
     
     .content_section_1:not(:last-child) {
-        margin-bottom: 25px;
+        margin-bottom: 10px;
     }
     
     .offer_lists .car-section a:hover {
@@ -566,10 +563,7 @@
     
     .last_section .content-block h2 {
         padding-left: 20px;
-        position: relative;
-        margin-bottom: 10px;
-        font-size: 20px;
-        line-height: 40px;
+        position: relative; 
     }
     
     .last_section .content-block h2:before {
@@ -578,7 +572,7 @@
         left: 0;
         top: 50%;
         transform: translateY(-50%);
-        height: 4px;
+        height: 3px;
         width: 15px;
         background: #000;
     }
@@ -598,16 +592,15 @@
     /*    pdf design start*/
     
     .information table td {
-        width: 33%;
-        max-width: 33%;
+        width: 25%;
+        max-width: 25%;
     }
     td {
  border-style : hidden;
 }
 
 
-.content-block.inner-wrapper .commonclass h2 {
-    margin-bottom: 10px;font-size: 20px;
+.content-block.inner-wrapper .commonclass h2 { 
     background: rgb(0, 0, 0);
     background: -moz-linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 100%);
     background: -webkit-linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 100%);
@@ -618,9 +611,9 @@
    
 }
 
-.content-block.inner-wrapper .commonclass p {
-    margin-bottom: 20px;
-}
+# .content-block.inner-wrapper .commonclass p {
+#     margin-bottom: 20px;
+# }
 
 </style>
 <div class="header-area">
@@ -635,17 +628,17 @@
                     </div>  
             </div> 
         </div> 
-    <section class="section-1-wrap">
-    <div class="container">
-       <div class="row"> 
-        <div class="section-1-inner"> 
-            <p>A PostYourCars listing specialist has reviewed your listing and has some suggestions
-            for you based on the data we have gathered for the week. Please review listings stats
-            for this week</p>
+        <section class="section-1-wrap">
+        <div class="container">
+        <div class="row"> 
+            <div class="section-1-inner"> 
+                <p>A PostYourCars listing specialist has reviewed your listing and has some suggestions
+                for you based on the data we have gathered for the week. Please review listings stats
+                for this week</p>
+            </div>
         </div>
-       </div>
-    </div>
-    </section> 
+        </div>
+        </section> 
                 <section class="section-2-wrap">
                     <div class="information">
                         <div class="container">
@@ -667,6 +660,11 @@
                                             <%= @car.model %>
                                         </div>
                                     </td>
+                                    <td><b>Miles</b> 
+                                        <div class="information">
+                                            <%= @car.miles %>
+                                        </div>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td><b>Year</b> 
@@ -684,19 +682,12 @@
                                             <%= @car.body %>
                                         </div>
                                     </td>
-                                </tr>
-                                <tr>
                                     <td><b>Vin #</b> 
                                         <div class="information">
                                             <%= @car.vin %>
                                         </div>
                                     </td>
-                                    <td><b>Miles</b> 
-                                        <div class="information">
-                                            <%= @car.miles %>
-                                        </div>
-                                    </td>
-                                </tr>
+                                </tr> 
                             </table>
                         </div>
                     </div>
@@ -708,18 +699,18 @@
                 <section class="section-stats">
                     <div class="container">
                         <div class="heading-holder">
-                            <h2>Stats and Analytics <i class="fa-sharp fa-solid fa-chart-simple"></i></h2> </div>
+                            <h2 style="font-size: 18px;margin-bottom: 10px;line-height: 20px">Stats and Analytics <i class="fa-sharp fa-solid fa-chart-simple"></i></h2> </div>
                         <div class="row additions">
-                            <table style="width: 95%;border:none;border-collapse: separate;border-spacing: 0 15px;">
+                            <table style="width: 95%;border:none;border-collapse: separate;border-spacing: 0 10px;margin: 0 0 -30px;">
                                 <tr>
                                     <td>
                                     <table style="width: 98%;margin-right: auto;margin-left: 0">
                                             <tr>
                                                 <td>
-                                                    <div class="number_holder" style="padding: 30px;border-radius: 10px 0 0 10px;width: 90px"> <span><%= @car.email_inq %></span> </div>
+                                                    <div class="number_holder" style="padding: 20px;border-radius: 10px 0 0 10px;width: 60px"> <span><%= @car.email_inq %></span> </div>
                                                 </td>
                                                 <td style="width: 100%;background: #fbfbfb;border-radius: 0 10px 10px 0;padding-left: 20px">
-                                                    <table style="width: 100%;padding: 30px;border-radius: 10px 0 0 10px;">
+                                                    <table style="width: 100%;padding: 20px;border-radius: 10px 0 0 10px;">
                                                         <tr>
                                                             <td>
                                                                 <div>Emails enquires</div>
@@ -737,7 +728,7 @@
                                     <table style="width: 98%;margin-right: 0;margin-left: auto">
                                             <tr>
                                                 <td>
-                                                    <div class="number_holder"  style="padding: 30px;border-radius: 10px 0 0 10px;width: 90px"> <span><%= @car.listing_save %></span> </div>
+                                                    <div class="number_holder"  style="padding: 20px;border-radius: 10px 0 0 10px;width: 60px"> <span><%= @car.listing_save %></span> </div>
                                                 </td>
                                                 <td style="width: 100%;background: #fbfbfb;border-radius: 0 10px 10px 0;padding-left: 20px">
                                                     <table style="width: 100%;">
@@ -766,7 +757,7 @@
                                         <table style="width: 98%;margin-right: auto;margin-left: 0;margin-top: 5px">
                                             <tr  style="width: 100%;">
                                                 <td>
-                                                    <div class="number_holder"  style="padding: 30px;border-radius: 10px 0 0 10px;width: 90px"> <span><%= @car.phone_inq %></span> </div>
+                                                    <div class="number_holder"  style="padding: 20px;border-radius: 10px 0 0 10px;width: 60px"> <span><%= @car.phone_inq %></span> </div>
                                                 </td>
                                                 <td style="width: 100%;background: #fbfbfb;border-radius: 0 10px 10px 0;padding-left: 20px">
                                                     <table style="width: 100%;">
@@ -793,7 +784,7 @@
                                         <table style="width: 98%;margin-right: 0;margin-left: auto;margin-top: 5px"> 
                                             <tr>
                                                 <td>
-                                                    <div class="number_holder"  style="padding: 30px;border-radius: 10px 0 0 10px;width: 90px"> <span><%= @car.listing_view %></span> </div>
+                                                    <div class="number_holder"  style="padding: 20px;border-radius: 10px 0 0 10px;width: 60px"> <span><%= @car.listing_view %></span> </div>
                                                 </td>
                                                 <td style="width: 100%;background: #fbfbfb;border-radius: 0 10px 10px 0;padding-left: 20px">
                                                     <table style="width: 100%;">
@@ -821,136 +812,84 @@
                 </section>
             </td>
         </tr>
-        <tr>
-            <td>
+
+ 
+     
+    
+    
+                   
+    
+    </table>
+            
                 <!-- purchase_offer section -->
                 <section class="fees-meinsection purchase_offer">
                     <div class="inner-wrapper">
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="content-block">
-                                    <h2>Purchase Offers</h2>
-                                    <p>These are the most recent offers we have recived on your car at its current listing price.</p>
+                                    <h2 style="font-size: 18px;margin-bottom: 10px;margin-top: 0;">Purchase Offers</h2>
+                                    <p style="font-size: 16px;margin-bottom: 0;">These are the most recent offers we have recived on your car at its current listing price.</p>
                                 </div>
                             </div>
                         </div>
                         <div class="offer_lists">
-                            <% @car.offer.each_with_index do |car,index| %>
-                                <% if index <= 3 %>
+                        <table class="offer_main" style="width: 100%;margin-top: 10px;margin-bottom: 30px">  
+                                <% @car.offer.each_with_index do |car,index| %> 
+                                    <% if index == 0 || index == 2 || index == 4 || index == 6 %>
+                                         <tr>
+                                         <% end %>
+                                         <td style="width: 50%;">
+                                          <table style="width: 100%;background: #cdeac7;border-radius: 5px;">
 
-                                <table class="offer_main" style="width: 100%;margin-top: 10px">
-                                    <tr>
-                                        <td style="width: 33%;">
-                                            <div class="name" style="padding: 10px 20px">
-                                                <%= car.name %>
-                                            </div>
-                                        </td>
-                                        <td style="width: 33%;">
-                                            <div class="offered_amount" style="padding: 10px 20px">Offered: <span class="price_amount">$ <%= car.amount %></span> </div>
-                                        </td>
-                                        <td style="width: 33%;">
-                                            <div class="offer_date" style="padding: 10px 20px">
-                                                <%= Date.parse(car.date).strftime("%B %e, %Y") %>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                </table>
-                                <% end %>
+                                            <td style="width: 33%;">
+                                                <div class="name" style="padding: 10px;font-size: 12px">
+                                                    <%= car.name %>
+                                                </div>
+                                            </td>
+                                            <td style="width: 33%;">
+                                                <div class="offered_amount" style="padding: 10px;font-size: 12px">Offered: <span class="price_amount">$ <%= car.amount %></span> </div>
+                                            </td>
+                                            <td style="width: 33%;">
+                                                <div class="offer_date" style="padding: 10px;font-size: 12px">
+                                                    <%= Date.parse(car.date).strftime("%B %e, %Y") %>
+                                                </div>
+                                            </td>
+                                            </table>
+                                            </td>  
+                                            <% if index == 1 || index == 3 || index == 5 || index == 7 %>
+                                            </tr>
+                                            <% end %>
+                                    <% end %>
 
-                                <% end %>
+
+                                </table>  
+
                         </div>
                     </div>
                 </section>
-            </td>
-        </tr>
+                <section class="last_section" style="margin-top: 10px;">
+<div class="row">
+    <h2 style="font-size: 18px;margin-bottom: 10px;margin-top: 0;">What you can do to improve your listing?</h2>
+    <div class="content-block inner-wrapper">
+        <div class="content_section_1">
+            <h2 style="font-size: 15px;margin-bottom: 0px;margin-top: 0;font-weight: 600;line-height: 32px">Premium Listing</h2>
+            <p style="font-size: 16px;margin: 0 0 5px;">Talk to your post sales specialist about our Premium listing services</p>
+        </div>
+        <div class="content_section_2 commonclass">
+            <h2 style="font-size: 15px;margin-bottom: 5px;margin-top: 0;font-weight: 600;">Additional Information</h2>
+            <p style="font-size: 16px;margin: 0 0 5px;">Be certain to share any information about your car that may positively effect its price like performance options, interior luxury packages, and suspension upgrades</p>
+        </div>
+        <div class="content_section_3 commonclass">
+            <h2 style="font-size: 15px;margin-bottom: 5px;margin-top: 0;font-weight: 600;">Consider a  Price Adjustment</h2>
+            <p style="font-size: 16px;margin: 0 0 5px;">super charge your listing by droping the price and attracting new potential buyers.</p>
+        </div>
+        <div class="content_section_4 commonclass">
+            <h2 style="font-size: 15px;margin-bottom: 5px;margin-top: 0;">Photos</h2>
+            <p style="font-size: 16px;margin: 0;">There are many potential buyers across the states who cant see your car in person. Give them all the resources they need to make a purchasing decision with the best photos you can provide.</p>
+        </div>
+    </div>
+</div>
+</section> 
+         
 
-
-
-
-
-
-
-
-
-
-
-        <tr>
-        <td>
-            <!-- purchase_offer section -->
-            <section class="fees-meinsection purchase_offer">
-                <div class="inner-wrapper">
-                   
-                    <div class="offer_lists">
-                        <% @car.offer.each_with_index do |car,index| %>
-                            <% if index > 3 %>
-                            <table class="offer_main" style="width: 100%;margin-top: 10px">
-                                <tr>
-                                    <td style="width: 33%;">
-                                        <div class="name" style="padding: 10px 20px">
-                                            <%= car.name %>
-                                        </div>
-                                    </td>
-                                    <td style="width: 33%;">
-                                        <div class="offered_amount" style="padding: 10px 20px">Offered: <span class="price_amount">$ <%= car.amount %></span> </div>
-                                    </td>
-                                    <td style="width: 33%;">
-                                        <div class="offer_date" style="padding: 10px 20px">
-                                            <%= Date.parse(car.date).strftime("%B %e, %Y") %>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </table>
-                            <% end %>
-
-                            <% end %>
-                    </div>
-                </div>
-            </section>
-        </td>
-    </tr>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        <tr>
-            <td>
-                <section class="last_section">
-                    <div class="row">
-                        <h2>What you can do to improve your listing?</h2>
-                        <div class="content-block inner-wrapper">
-                            <div class="content_section_1">
-                                <h2>Premium Listing</h2>
-                                <p>Talk to your post sales specialist about our Premium listing services</p>
-                            </div>
-                            <div class="content_section_2 commonclass">
-                                <h2 >Additional Information</h2>
-                                <p>Be certain to share any information about your car that may positively effect its price like performance options, interior luxury packages, and suspension upgrades</p>
-                            </div>
-                            <div class="content_section_3 commonclass">
-                                <h2>Consider a  Price Adjustment</h2>
-                                <p>super charge your listing by droping the price and attracting new potential buyers.</p>
-                            </div>
-                            <div class="content_section_4 commonclass">
-                                <h2>Photos</h2>
-                                <p>There are many potential buyers across the states who cant see your car in person. Give them all the resources they need to make a purchasing decision with the best photos you can provide.</p>
-                            </div>
-                        </div>
-                    </div>
-                </section> 
-</td>
-</tr>
-</table>
 </div>
