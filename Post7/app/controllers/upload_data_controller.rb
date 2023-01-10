@@ -1,6 +1,7 @@
 class UploadDataController < ApplicationController
   before_action :set_car, only: %i[ destroy ]
   protect_from_forgery with: :null_session
+  skip_before_action :verify_authenticity_token
 
   # GET /cars or /cars.json
 
@@ -30,17 +31,19 @@ end
 
   # POST /cars or /cars.json
   def create
-
-
-    # render json: {data: params}
-
-
-    @upload_data = UploadDatum.new(upload_datas)
-    # @upload_data.images.attach(params[:images])
-
-    if @upload_data.save
-      render json: {status: 200,message: "data save successfully","params": params}
+    file_paths = []
+    params[:images].each do |file_path|
+        file_paths << {path: file_path.path, name: file_path.original_filename}
     end
+    UploadImageWorker.perform_async(params.to_json, file_paths)
+    render json: {status: 200,message: "data save successfully"}
+
+
+    # @upload_data = UploadDatum.new(upload_datas)
+
+    # if @upload_data.save
+    #   render json: {status: 200,message: "data save successfully","params": params}
+    # end
     
   end
 
