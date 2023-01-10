@@ -24,7 +24,7 @@ class CarsController < ApplicationController
     respond_to do |format|
       format.html
       format.pdf do
-        render  pdf: "car Details#{@car.name}", template: "cars/showpdf", formats: [:html], layout: "pdf",page_size: "A4" #,disposition: "attachment"
+        render  pdf: "car Details#{@car.name}", template: "cars/showpdf", formats: [:html], layout: "pdf",page_size: "A4" ,disposition: "attachment"
       end
     end
 

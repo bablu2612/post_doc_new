@@ -3,83 +3,165 @@
 *{
   font-family: 'Poppins', sans-serif;
 }
-    form :where(input, select) {
-        width: 100%;
-        outline: none;
-        display: block;
-        color: #6E7684;
-        font-size: 16px;
-        padding: 0px 20px;
-        border-radius: 4px;
-        background-color: #ffffff; 
-        border: 1px solid #D8D8D8;
-        transition: 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-        height: 50px;
-        box-shadow: 0 5px 5px 0 #0000000d !important;
-    } 
-    .similar_list form,
-    .main-wrapper {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 30px;
-        width: 100%;
-    }
-    
-    .form-group label {
-        font-weight: 600;
-        font-size: 16px;
-        font-family: poppins;
-    }
-    label[for="car_id"] {
-    display: none;
+form :where(input, select) {
+    width: 100%;
+    outline: none;
+    display: block;
+    color: #6E7684;
+    font-size: 16px;
+    padding: 0px 20px;
+    border-radius: 4px;
+    background-color: #ffffff; 
+    border: 1px solid #D8D8D8;
+    transition: 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    height: 50px;
+    box-shadow: 0 5px 5px 0 #0000000d !important;
 } 
+
 .main-wrapper {
-    margin-bottom: 70px;
-}
-h2 {
-    text-transform: uppercase;
-    font-weight: 700;
-    font-size: 30px;
-    margin: 20px 0;
-    border-left: 5px solid #2563eb;
-    padding-left: 20px;
-}
-.similar_list, .main-wrapper {
-    padding: 40px;
-    border-radius: 15px;
-    background: url('http://futureshapers.co.in/wp-content/uploads/2022/11/pattern.jpg');
-    background-size: contain;
-    background-position: center;
-    box-shadow: 0px 6px 10px rgb(0 0 0 / 10%);
-    border: 1px solid #f7f7f7;
-}
-.nav-cstm {
-    margin: 40px 0;
-}
-.nav-cstm a{
-    background: #000;color: #fff;
-    text-decoration: none;margin-left: 0;transition: 0.3 ease all;
-}
-.nav-cstm a:hover{
-  background: #2563eb;
-}
-.similar_list form{
     display: grid;
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 30px;
     width: 100%;
-    justify-self: stretch;
 }
-.similar_list {
-    display: flex;
+
+.form-group label {
+    font-weight: 600;
+    font-size: 16px;
+    font-family: poppins;
+}
+label[for="car_id"] {
+display: none;
+} 
+.main-wrapper {
+margin-bottom: 70px;
+}
+h2 {
+text-transform: uppercase;
+font-weight: 700;
+font-size: 30px;
+margin: 20px 0;
+border-left: 5px solid #2563eb;
+padding-left: 20px;
+}
+.similar_list, .main-wrapper {
+padding: 40px;
+border-radius: 15px;
+background: url('http://futureshapers.co.in/wp-content/uploads/2022/11/pattern.jpg');
+background-size: contain;
+background-position: center;
+box-shadow: 0px 6px 10px rgb(0 0 0 / 10%);
+border: 1px solid #f7f7f7;
+}
+.nav-cstm {
+margin: 40px 0;
+}
+.nav-cstm a{
+background: #000;color: #fff;
+text-decoration: none;margin-left: 0;transition: 0.3 ease all;
+}
+.nav-cstm a:hover{
+background: #2563eb;
+}
+
+/* 07-01-2023 */
+
+.form-group label {
+text-transform: uppercase;
 } 
 
-.similar_list form:not(:nth-child(3)) {
-    border-right: 1px solid #ddd;
-    padding-right: 40px;
-    margin-right: 40px;
+
+.similar_list form .form-group {
+margin-top: 20px;
+}
+.similar_list form {
+max-width: calc(100%/3 - 15px);
+flex: calc(100%/3 - 15px);
+width: 100%;
+border: 1px solid #ddd;
+padding: 25px; 
+display: grid;
+grid-template-columns: repeat(1, 1fr); 
+width: 100%;
+justify-self: stretch;
+}
+.similar_list form .form-group:last-child {
+margin-top: 0;
+}
+.similar_list {
+flex-wrap: wrap;
+display: flex;
+gap: 30px 22px;
+justify-content: flex-start;
+}
+.similar_list input[type="hidden"]+.form-group {
+margin-top: 0;
 }
 
+
+.similar_list form {
+max-width: calc(100%/3 - 15px);
+flex: calc(100%/3 - 15px);
+border: 1px solid #ddd;
+padding: 25px;
+display: grid;
+grid-template-columns: repeat(1, 1fr);
+width: 100%;
+justify-self: stretch;
+background: #ffffffad;
+}
+.main-wrapper>.form-group:not(:last-child) {
+margin-bottom: 15px;
+}
+@media (max-width: 1280px){
+
+h2 { 
+font-size: 24px;  
+padding-left: 15px;
+}
+
+.main-wrapper {
+margin-bottom: 50px;
+}
+.similar_list, .main-wrapper {
+padding: 30px;
+}
+
+}
+@media (max-width: 991px){
+.similar_list form {
+max-width: calc(100%/2 - 15px);
+flex: calc(100%/2 - 15px); 
+}
+.main-wrapper { 
+grid-template-columns: repeat(2, 1fr);
+gap: 20px; 
+}
+
+}
+
+@media (max-width: 767px){ 
+.similar_list form {
+    max-width: 100%;
+    flex: 100%;
+}
+.similar_list, .main-wrapper{
+    padding: 20px;
+}
+h2 { 
+    font-size: 20px; 
+    padding-left: 10px;
+}
+.similar_list {
+    gap: 0;
+}
+.main-wrapper {
+    margin-bottom: 40px;     display: block;
+}
+.similar_list form:not(:last-child) {
+    margin-bottom: 20px;
+}
+}
  
 </style>
 <%= form_with(model: car, class: "contents",id: "create_form") do |form| %>
@@ -98,9 +180,9 @@ h2 {
 
             <div class="main-wrapper">
                 <div class="form-group">
-                    <%= form.label :name %>
+                    <%= form.label :name %> <span class="text-red-500">*</span>
+
                         <%= form.text_field :name, id: "name", class: "block shadow-sm rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full",placeholder: "Enter name" %>
-                        <span class="text-red-500">*</span>
                 </div>
 
                 <div class="form-group">
@@ -204,18 +286,20 @@ h2 {
             <div class="similar_wrap">
             <h2>offer </h2>
             <div class="similar_list">
+            <% if @car.offer.length >= 1 %>
+
                 <%= form_with url: "/cars/#{params[:car_id]}/car_compares",id: "offer1", method: :post do |form| %>
                     <input type="hidden" value="<%=@car.offer[0].id %>" id="car_compares_id" />    
                     <div class="form-group">
-                        <%= form.label :days,'Name' %><span class="text-red-500">*</span>
+                        <%= form.label :days,'Name' %>
                         <%= form.text_field :days,id:"days",value: @car.offer[0].name, class: "block shadow-sm rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full",placeholder: "Enter name" %>
                     </div>
                     <div class="form-group">
-                        <%= form.label :price,'Offer amount' %><span class="text-red-500">*</span>
+                        <%= form.label :price,'Offer amount' %>
                         <%= form.text_field :price,id:"price",value: @car.offer[0].amount, class: "block shadow-sm rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full",placeholder: "Enter Offer amount" %>
                     </div>
                     <div class="form-group">
-                        <%= form.label :Mileage,'Date' %><span class="text-red-500">*</span>
+                        <%= form.label :Mileage,'Date' %>
                         <%= form.date_field :Mileage,id:"Mileage",value: @car.offer[0].date,  class: "block shadow-sm rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full",placeholder: "Enter date" %>
                     </div>
                   
@@ -223,20 +307,25 @@ h2 {
                         <%= form.label :car_id %>
                             <%= form.hidden_field :car_id, class: "block shadow-sm rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full", value: params[:car_id], disabled: true %>
                     </div>
+
                 <% end %>
+            <% end %>
+
+            <% if @car.offer.length >= 2 %>
+
                 <%= form_with url: "/cars/#{params[:car_id]}/car_compares",id: "offer2", method: :post do |form| %>
                     <input type="hidden" value="<%=@car.offer[1].id %>" id="car_compares_id" />    
 
                     <div class="form-group">
-                        <%= form.label :days,'Name' %><span class="text-red-500">*</span>
+                        <%= form.label :days,'Name' %>
                             <%= form.text_field :days,id:"days",value: @car.offer[1].name, class: "block shadow-sm rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full",placeholder: "Enter name" %>
                     </div>
                     <div class="form-group">
-                        <%= form.label :price,'Offer amount' %><span class="text-red-500">*</span>
+                        <%= form.label :price,'Offer amount' %>
                             <%= form.text_field :price,id:"price",value: @car.offer[1].amount, class: "block shadow-sm rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full",placeholder: "Enter Offer amount" %>
                     </div>
                     <div class="form-group">
-                        <%= form.label :Mileage,'Date' %><span class="text-red-500">*</span>
+                        <%= form.label :Mileage,'Date' %>
                             <%= form.date_field :Mileage,id:"Mileage",value: @car.offer[1].date, class: "block shadow-sm rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full",placeholder: "Enter date"  %>
                     </div>
                     
@@ -245,19 +334,23 @@ h2 {
                             <%= form.hidden_field :car_id, class: "block shadow-sm rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full", value: params[:car_id], disabled: true %>
                     </div>
                 <% end %>
-                                
+                      
+        <% end %>
+
+                <% if @car.offer.length >= 3 %>
+
                 <%= form_with url: "/cars/#{params[:car_id]}/car_compares",id: "offer3", method: :post do |form| %>
                     <input type="hidden" value="<%=@car.offer[2].id %>" id="car_compares_id" />    
                     <div class="form-group">
-                        <%= form.label :days,'Name' %><span class="text-red-500">*</span>
+                        <%= form.label :days,'Name' %>
                         <%= form.text_field :days,id:"days",value: @car.offer[2].name, class: "block shadow-sm rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full",placeholder: "Enter name" %>
                     </div>
                     <div class="form-group">
-                        <%= form.label :price,'Offer amount' %><span class="text-red-500">*</span>
+                        <%= form.label :price,'Offer amount' %>
                             <%= form.text_field :price,id:"price",value: @car.offer[2].amount, class: "block shadow-sm rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full",placeholder: "Enter Offer amount" %>
                     </div>
                     <div class="form-group">
-                        <%= form.label :Mileage,'Date' %><span class="text-red-500">*</span>
+                        <%= form.label :Mileage,'Date' %>
                             <%= form.date_field :Mileage,id:"Mileage",value: @car.offer[2].date, class: "block shadow-sm rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full",placeholder: "Enter date"  %>
                     </div>
 
@@ -267,6 +360,7 @@ h2 {
                     </div>
                     
                 <% end %>
+                <% end %>
 
 
 
@@ -281,20 +375,21 @@ h2 {
 
 
 
+                <% if @car.offer.length >= 4 %>
 
 
                 <%= form_with url: "/cars/#{params[:car_id]}/car_compares",id: "offer4", method: :post do |form| %>
-                    <input type="hidden" value="<%=@car.offer[2].id %>" id="car_compares_id" />    
+                    <input type="hidden" value="<%=@car.offer[3].id %>" id="car_compares_id" />    
                     <div class="form-group">
-                        <%= form.label :days,'Name' %><span class="text-red-500">*</span>
+                        <%= form.label :days,'Name' %>
                         <%= form.text_field :days,id:"days",value: @car.offer[3].name, class: "block shadow-sm rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full",placeholder: "Enter name" %>
                     </div>
                     <div class="form-group">
-                        <%= form.label :price,'Offer amount' %><span class="text-red-500">*</span>
+                        <%= form.label :price,'Offer amount' %>
                             <%= form.text_field :price,id:"price",value: @car.offer[3].amount, class: "block shadow-sm rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full",placeholder: "Enter Offer amount" %>
                     </div>
                     <div class="form-group">
-                        <%= form.label :Mileage,'Date' %><span class="text-red-500">*</span>
+                        <%= form.label :Mileage,'Date' %>
                             <%= form.date_field :Mileage,id:"Mileage",value: @car.offer[3].date, class: "block shadow-sm rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full",placeholder: "Enter date"  %>
                     </div>
 
@@ -306,21 +401,22 @@ h2 {
                 <% end %>
 
 
+<% end %>
 
-
+<% if @car.offer.length >= 5 %>
 
                 <%= form_with url: "/cars/#{params[:car_id]}/car_compares",id: "offer5", method: :post do |form| %>
-                <input type="hidden" value="<%=@car.offer[2].id %>" id="car_compares_id" />    
+                <input type="hidden" value="<%=@car.offer[4].id %>" id="car_compares_id" />    
                 <div class="form-group">
-                    <%= form.label :days,'Name' %><span class="text-red-500">*</span>
+                    <%= form.label :days,'Name' %>
                     <%= form.text_field :days,id:"days",value: @car.offer[4].name, class: "block shadow-sm rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full",placeholder: "Enter name" %>
                 </div>
                 <div class="form-group">
-                    <%= form.label :price,'Offer amount' %><span class="text-red-500">*</span>
+                    <%= form.label :price,'Offer amount' %>
                         <%= form.text_field :price,id:"price",value: @car.offer[4].amount, class: "block shadow-sm rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full",placeholder: "Enter Offer amount" %>
                 </div>
                 <div class="form-group">
-                    <%= form.label :Mileage,'Date' %><span class="text-red-500">*</span>
+                    <%= form.label :Mileage,'Date' %>
                         <%= form.date_field :Mileage,id:"Mileage",value: @car.offer[4].date, class: "block shadow-sm rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full",placeholder: "Enter date"  %>
                 </div>
 
@@ -330,20 +426,24 @@ h2 {
                 </div>
                 
             <% end %>
+            <% end %>
+
+
+            <% if @car.offer.length >= 6 %>
 
 
             <%= form_with url: "/cars/#{params[:car_id]}/car_compares",id: "offer6", method: :post do |form| %>
-            <input type="hidden" value="<%=@car.offer[2].id %>" id="car_compares_id" />    
+            <input type="hidden" value="<%=@car.offer[5].id %>" id="car_compares_id" />    
             <div class="form-group">
-                <%= form.label :days,'Name' %><span class="text-red-500">*</span>
+                <%= form.label :days,'Name' %>
                 <%= form.text_field :days,id:"days",value: @car.offer[5].name, class: "block shadow-sm rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full",placeholder: "Enter name" %>
             </div>
             <div class="form-group">
-                <%= form.label :price,'Offer amount' %><span class="text-red-500">*</span>
+                <%= form.label :price,'Offer amount' %>
                     <%= form.text_field :price,id:"price",value: @car.offer[5].amount, class: "block shadow-sm rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full",placeholder: "Enter Offer amount" %>
             </div>
             <div class="form-group">
-                <%= form.label :Mileage,'Date' %><span class="text-red-500">*</span>
+                <%= form.label :Mileage,'Date' %>
                     <%= form.date_field :Mileage,id:"Mileage",value: @car.offer[5].date, class: "block shadow-sm rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full",placeholder: "Enter date"  %>
             </div>
 
@@ -353,20 +453,24 @@ h2 {
             </div>
             
         <% end %>
+        <% end %>
 
+
+
+        <% if @car.offer.length >= 7 %>
 
         <%= form_with url: "/cars/#{params[:car_id]}/car_compares",id: "offer7", method: :post do |form| %>
-        <input type="hidden" value="<%=@car.offer[2].id %>" id="car_compares_id" />    
+        <input type="hidden" value="<%=@car.offer[6].id %>" id="car_compares_id" />    
         <div class="form-group">
-            <%= form.label :days,'Name' %><span class="text-red-500">*</span>
+            <%= form.label :days,'Name' %>
             <%= form.text_field :days,id:"days",value: @car.offer[6].name, class: "block shadow-sm rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full",placeholder: "Enter name" %>
         </div>
         <div class="form-group">
-            <%= form.label :price,'Offer amount' %><span class="text-red-500">*</span>
+            <%= form.label :price,'Offer amount' %>
                 <%= form.text_field :price,id:"price",value: @car.offer[6].amount, class: "block shadow-sm rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full",placeholder: "Enter Offer amount" %>
         </div>
         <div class="form-group">
-            <%= form.label :Mileage,'Date' %><span class="text-red-500">*</span>
+            <%= form.label :Mileage,'Date' %>
                 <%= form.date_field :Mileage,id:"Mileage",value: @car.offer[6].date, class: "block shadow-sm rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full",placeholder: "Enter date"  %>
         </div>
 
@@ -381,6 +485,7 @@ h2 {
 
 
 
+       <% end %>
 
 
 
@@ -449,6 +554,9 @@ e.preventDefault();
             console.log("Data",data);
 
             for(let i=1;i<=7;i++){
+
+            if($("#offer"+i+" #days").val() !== "" && $("#offer"+i +" #Mileage").val() != ""){
+
                 let car_offer_id=$("#offer"+i+" #car_compares_id").val()
 
 
@@ -475,17 +583,19 @@ e.preventDefault();
                     },
                     type: 'PATCH'
                 })
+
+            }
+
+            if(i==7){
+                setTimeout(function () {
+                    window.location.href = "/cars";
+
+                 }, 250);
+            }
+
+
             }
            
-        
-
-
-
-
-
-
-
-
 
 
         },

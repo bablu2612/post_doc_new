@@ -10,6 +10,7 @@ Rails.application.configure do
       resource '*', :headers => :any, :methods => [:get, :post,:delete, :options]
     end
   end
+#    config.force_ssl = true
 
 
   config.active_storage.replace_on_assign_to_many = false
@@ -23,8 +24,8 @@ Rails.application.configure do
 
   # config.hosts << "e874-112-196-23-172.in.ngrok.io"
 
-  config.hosts << /[a-z0-9-.]+\.ngrok\.io/
-
+#  config.hosts << /[a-z0-9-.]+\.ngrok\.io/
+config.hosts << "pmv.postyourcars.com"
   
   # Do not eager load code on boot.
   config.eager_load = false

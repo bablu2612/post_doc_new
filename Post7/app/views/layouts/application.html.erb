@@ -16,13 +16,50 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-
+  <style>
+  .download_button {
+    position: fixed;
+    right: 10px;
+    top: 10px; 
+      background: #406ae8;
+      border-radius: 5px;
+      padding: 10px 20px; 
+      display: flex;
+      gap: 10px;
+  }
+  .download_button a { 
+    color: #fff; 
+    text-decoration: none;
+    font-weight: 500; 
+    background: none; 
+}
+.download_button i.fa.fa-download {
+    color: #fff;
+}
+@media (max-width: 767px){
+  .download_button a {
+    font-size: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+}
+.download_button{
+  right: 0;padding: 10px 15px;
+}
+}
+  </style>
     </head>
 
   <body>
     <div class="h-full"> 
     <%  if params.has_key?(:id) && current_page?(car_path(params[:id])) %>
+    <div class="download_button">
     <%= link_to "Download Pdf", car_path(format: :pdf) %>
+    <div><i class='fa fa-download'></i></div>
+
+    </div>
 
 <% else %>
 
