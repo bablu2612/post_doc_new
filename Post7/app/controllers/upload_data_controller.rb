@@ -4,15 +4,15 @@ class UploadDataController < ApplicationController
 
   # GET /cars or /cars.json
 
-  before_action do
-    ActiveStorage::Current.host = request.base_url
-  end
+  # before_action do
+  #   ActiveStorage::Current.host = request.base_url
+  # end
 def index 
     @secretMenuItems = UploadDatum.all
     images = []
     @secretMenuItems.each do |item|
       
-       imageData= item.images.map{|val| {"#{val.name}": val.url } }
+       imageData= item.images.map{|val| {"#{val.name}": val.service_url } }
         data={data: item,images: imageData}
         images << data
 
