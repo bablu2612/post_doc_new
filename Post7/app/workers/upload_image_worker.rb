@@ -14,7 +14,7 @@ class UploadImageWorker
                 description: params["description"]
                 )
             temp_path.each do |file|
-                binding.pry
+                # binding.pry
             secretMenuItem.images.attach(
                 io: File.open(file["path"]),
                 filename: file["name"],)
@@ -24,18 +24,5 @@ class UploadImageWorker
     end
 
 
-
-#     def perform(upload_datas)
-#         # upload_datas = JSON.parse(upload_datas)&.deep_symbolize_keys rescue nil
-# # puts "error"
-# # upload_datas["images"]=[]
-# # upload_datas["images"]=image
-#          puts upload_datas
-
-#         # @upload_data=UploadDatum.new(upload_datas)
-#         # # @upload_data.images.attach(image)
-
-#         # @upload_data.save
-#    end
   
   end
