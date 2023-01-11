@@ -13,7 +13,7 @@ def index
     images = []
     @secretMenuItems.each do |item|
       
-       imageData= item.images.map{|val| {"#{val.name}": val.service_url } }
+       imageData= item.images.map{|val| {"#{val.name}": val.service_url,name: val.filename } }
         data={data: item,images: imageData}
         images << data
 
